@@ -1,0 +1,1993 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.f_PriceEntry..Create(BaseForm)
+Gui.f_PriceEntry..Caption("COMEX Price Entry (6791)")
+Gui.f_PriceEntry..Size(396,465)
+Gui.f_PriceEntry..MinX(0)
+Gui.f_PriceEntry..MinY(0)
+Gui.f_PriceEntry..Position(0,0)
+Gui.f_PriceEntry..AlwaysOnTop(False)
+Gui.f_PriceEntry..FontName("Tahoma")
+Gui.f_PriceEntry..FontSize(8.25)
+Gui.f_PriceEntry..ControlBox(True)
+Gui.f_PriceEntry..MaxButton(False)
+Gui.f_PriceEntry..MinButton(True)
+Gui.f_PriceEntry..MousePointer(0)
+Gui.f_PriceEntry..Moveable(True)
+Gui.f_PriceEntry..Sizeable(False)
+Gui.f_PriceEntry..ShowInTaskBar(True)
+Gui.f_PriceEntry..TitleBar(True)
+Gui.f_PriceEntry..Event(UnLoad,f_PriceEntry_UnLoad)
+Gui.f_PriceEntry.GsGcPrice.Create(GsGridControl)
+Gui.f_PriceEntry.GsGcPrice.Enabled(True)
+Gui.f_PriceEntry.GsGcPrice.Visible(True)
+Gui.f_PriceEntry.GsGcPrice.Zorder(0)
+Gui.f_PriceEntry.GsGcPrice.Size(396,424)
+Gui.f_PriceEntry.GsGcPrice.Position(0,11)
+Gui.f_PriceEntry.GsGcPrice.Dock(2)
+Gui.f_PriceEntry.GsGcPrice.Event(CellValueChanged,GsGcPrice_CellValueChanged)
+Gui.f_ConPrice..Create(BaseForm)
+Gui.f_ConPrice..Caption("Base Cost (6791)")
+Gui.f_ConPrice..Size(246,389)
+Gui.f_ConPrice..MinX(0)
+Gui.f_ConPrice..MinY(0)
+Gui.f_ConPrice..Position(0,0)
+Gui.f_ConPrice..AlwaysOnTop(False)
+Gui.f_ConPrice..FontName("Tahoma")
+Gui.f_ConPrice..FontSize(8.25)
+Gui.f_ConPrice..ControlBox(True)
+Gui.f_ConPrice..MaxButton(False)
+Gui.f_ConPrice..MinButton(True)
+Gui.f_ConPrice..MousePointer(0)
+Gui.f_ConPrice..Moveable(True)
+Gui.f_ConPrice..Sizeable(False)
+Gui.f_ConPrice..ShowInTaskBar(True)
+Gui.f_ConPrice..TitleBar(True)
+Gui.f_ConPrice..ShowCompanyCode(False)
+Gui.f_ConPrice..Event(UnLoad,f_ConPrice_UnLoad)
+Gui.f_ConPrice.lblCust.Create(Label,"Customer:",True,50,13,0,10,8,True,0,"Tahoma",8.25,,0,0)
+Gui.f_ConPrice.lblCust.BorderStyle(0)
+Gui.f_ConPrice.txtCust.Create(TextBox,"",True,57,20,0,10,24,True,0,"Tahoma",8.25,,1)
+Gui.f_ConPrice.txtCust.Locked(True)
+Gui.f_ConPrice.txtCust.TabStop(True)
+Gui.f_ConPrice.txtCust.TabIndex(3)
+Gui.f_ConPrice.lblPart.Create(Label,"Part:",True,24,13,0,10,108,True,0,"Tahoma",8.25,,0,0)
+Gui.f_ConPrice.lblPart.BorderStyle(0)
+Gui.f_ConPrice.txtPart.Create(TextBox,"",True,108,20,0,10,124,True,0,"Tahoma",8.25,,1)
+Gui.f_ConPrice.txtPart.Locked(True)
+Gui.f_ConPrice.txtPart.TabStop(True)
+Gui.f_ConPrice.txtPart.TabIndex(4)
+Gui.f_ConPrice.lblDesc.Create(Label,"Description:",True,57,13,0,10,153,True,0,"Tahoma",8.25,,0,0)
+Gui.f_ConPrice.lblDesc.BorderStyle(0)
+Gui.f_ConPrice.txtDesc.Create(TextBox,"",True,228,20,0,10,169,True,0,"Tahoma",8.25,,1)
+Gui.f_ConPrice.txtDesc.Locked(True)
+Gui.f_ConPrice.txtDesc.TabStop(True)
+Gui.f_ConPrice.txtDesc.TabIndex(5)
+Gui.f_ConPrice.lblBaseCost.Create(Label,"Base Cost:",True,52,13,0,10,300,True,0,"Tahoma",8.25,,0,0)
+Gui.f_ConPrice.lblBaseCost.BorderStyle(0)
+Gui.f_ConPrice.txtCost.Create(TextBox,"",True,100,20,0,10,316,True,0,"Tahoma",8.25,,1)
+Gui.f_ConPrice.txtCost.Mask("$#.0000")
+Gui.f_ConPrice.txtCost.TabStop(True)
+Gui.f_ConPrice.txtCost.TabIndex(1)
+Gui.f_ConPrice.cmdSave.Create(Button)
+Gui.f_ConPrice.cmdSave.Enabled(True)
+Gui.f_ConPrice.cmdSave.Visible(True)
+Gui.f_ConPrice.cmdSave.Zorder(0)
+Gui.f_ConPrice.cmdSave.Size(75,23)
+Gui.f_ConPrice.cmdSave.Position(161,315)
+Gui.f_ConPrice.cmdSave.Caption("Save")
+Gui.f_ConPrice.cmdSave.FontName("Tahoma")
+Gui.f_ConPrice.cmdSave.FontSize(8.25)
+Gui.f_ConPrice.cmdSave.Event(Click,cmdSave_Click)
+Gui.f_ConPrice.cmdSave.TabStop(True)
+Gui.f_ConPrice.cmdSave.TabIndex(2)
+Gui.f_ConPrice.lblMetalCont.Create(Label,"Metal Content:",True,72,13,0,10,253,True,0,"Tahoma",8.25,,0,0)
+Gui.f_ConPrice.lblMetalCont.BorderStyle(0)
+Gui.f_ConPrice.txtMetalCont.Create(TextBox,"",True,228,20,0,10,269,True,0,"Tahoma",8.25,,1)
+Gui.f_ConPrice.txtMetalCont.Locked(True)
+Gui.f_ConPrice.txtMetalCont.TabStop(True)
+Gui.f_ConPrice.txtMetalCont.TabIndex(6)
+Gui.f_ConPrice.lblCustName.Create(Label,"Customer Name:",True,80,13,0,10,58,True,0,"Tahoma",8.25,,0,0)
+Gui.f_ConPrice.lblCustName.BorderStyle(0)
+Gui.f_ConPrice.txtCustName.Create(TextBox,"",True,228,20,0,10,75,True,0,"Tahoma",8.25,,1)
+Gui.f_ConPrice.txtCustName.Locked(True)
+Gui.f_ConPrice.lblRev.Create(Label,"Rev:",True,23,13,0,126,108,True,0,"Tahoma",8.25,,0,0)
+Gui.f_ConPrice.lblRev.BorderStyle(0)
+Gui.f_ConPrice.txtRev.Create(TextBox,"",True,40,20,0,126,124,True,0,"Tahoma",8.25,,1)
+Gui.f_ConPrice.txtRev.Locked(True)
+Gui.f_ConPrice.txtCustPart.Create(TextBox,"",True,228,20,0,10,219,True,0,"Tahoma",8.25,,1)
+Gui.f_ConPrice.txtCustPart.Locked(True)
+Gui.f_ConPrice.lblCustPart.Create(Label,"Customer Part:",True,73,13,0,10,202,True,0,"Tahoma",8.25,,0,0)
+Gui.f_ConPrice.lblCustPart.BorderStyle(0)
+Gui.f_RouterBaseCost..Create(BaseForm)
+Gui.f_RouterBaseCost..Caption("Base Cost (6791)")
+Gui.f_RouterBaseCost..Size(278,370)
+Gui.f_RouterBaseCost..MinX(0)
+Gui.f_RouterBaseCost..MinY(0)
+Gui.f_RouterBaseCost..Position(0,0)
+Gui.f_RouterBaseCost..AlwaysOnTop(False)
+Gui.f_RouterBaseCost..FontName("Tahoma")
+Gui.f_RouterBaseCost..FontSize(8.25)
+Gui.f_RouterBaseCost..ControlBox(True)
+Gui.f_RouterBaseCost..MaxButton(False)
+Gui.f_RouterBaseCost..MinButton(True)
+Gui.f_RouterBaseCost..MousePointer(0)
+Gui.f_RouterBaseCost..Moveable(True)
+Gui.f_RouterBaseCost..Sizeable(False)
+Gui.f_RouterBaseCost..ShowInTaskBar(True)
+Gui.f_RouterBaseCost..TitleBar(True)
+Gui.f_RouterBaseCost..Event(UnLoad,f_RouterBaseCost_UnLoad)
+Gui.f_RouterBaseCost..ShowCompanyCode(False)
+Gui.f_RouterBaseCost.lblCust.Create(Label,"Customer:",True,50,13,0,9,11,True,0,"Tahoma",8.25,,0,0)
+Gui.f_RouterBaseCost.lblCust.BorderStyle(0)
+Gui.f_RouterBaseCost.txtCust.Create(TextBox,"",True,62,20,0,9,28,True,0,"Tahoma",8.25,,1)
+Gui.f_RouterBaseCost.txtCust.Locked(True)
+Gui.f_RouterBaseCost.txtCust.TabStop(True)
+Gui.f_RouterBaseCost.txtCust.TabIndex(5)
+Gui.f_RouterBaseCost.txtPart.Create(TextBox,"",True,116,20,0,9,75,True,0,"Tahoma",8.25,,1)
+Gui.f_RouterBaseCost.txtPart.Locked(True)
+Gui.f_RouterBaseCost.txtPart.TabStop(True)
+Gui.f_RouterBaseCost.txtPart.TabIndex(6)
+Gui.f_RouterBaseCost.lblPart.Create(Label,"Part:",True,24,13,0,9,60,True,0,"Tahoma",8.25,,0,0)
+Gui.f_RouterBaseCost.lblPart.BorderStyle(0)
+Gui.f_RouterBaseCost.lblDesc.Create(Label,"Description:",True,57,13,0,9,110,True,0,"Tahoma",8.25,,0,0)
+Gui.f_RouterBaseCost.lblDesc.BorderStyle(0)
+Gui.f_RouterBaseCost.txtDesc.Create(TextBox,"",True,259,20,0,9,125,True,0,"Tahoma",8.25,,1)
+Gui.f_RouterBaseCost.txtDesc.Locked(True)
+Gui.f_RouterBaseCost.txtDesc.TabStop(True)
+Gui.f_RouterBaseCost.txtDesc.TabIndex(7)
+Gui.f_RouterBaseCost.txtMetCont.Create(TextBox,"",True,259,20,0,9,224,True,0,"Tahoma",8.25,,1)
+Gui.f_RouterBaseCost.txtMetCont.Locked(True)
+Gui.f_RouterBaseCost.txtMetCont.TabStop(True)
+Gui.f_RouterBaseCost.txtMetCont.TabIndex(8)
+Gui.f_RouterBaseCost.lblMetCont.Create(Label,"Metal Contet:",True,66,13,0,9,209,True,0,"Tahoma",8.25,,0,0)
+Gui.f_RouterBaseCost.lblMetCont.BorderStyle(0)
+Gui.f_RouterBaseCost.lblBaseCost.Create(Label,"Base Cost:",True,52,13,0,9,259,True,0,"Tahoma",8.25,,0,0)
+Gui.f_RouterBaseCost.lblBaseCost.BorderStyle(0)
+Gui.f_RouterBaseCost.txtBasecost.Create(TextBox,"",True,99,20,0,9,274,True,0,"Tahoma",8.25,,1)
+Gui.f_RouterBaseCost.txtBasecost.Mask("$#0.0000")
+Gui.f_RouterBaseCost.txtBasecost.TabStop(True)
+Gui.f_RouterBaseCost.txtBasecost.TabIndex(1)
+Gui.f_RouterBaseCost.lblFabCost.Create(Label,"Fabrication Cost:",True,82,13,0,167,259,True,0,"Tahoma",8.25,,0,0)
+Gui.f_RouterBaseCost.lblFabCost.BorderStyle(0)
+Gui.f_RouterBaseCost.txtFabCost.Create(TextBox,"",True,100,20,0,168,274,True,0,"Tahoma",8.25,,1)
+Gui.f_RouterBaseCost.txtFabCost.Mask("$#0.0000")
+Gui.f_RouterBaseCost.txtFabCost.TabStop(True)
+Gui.f_RouterBaseCost.txtFabCost.TabIndex(2)
+Gui.f_RouterBaseCost.cmdSave.Create(Button)
+Gui.f_RouterBaseCost.cmdSave.Enabled(True)
+Gui.f_RouterBaseCost.cmdSave.Visible(True)
+Gui.f_RouterBaseCost.cmdSave.Zorder(0)
+Gui.f_RouterBaseCost.cmdSave.Size(75,23)
+Gui.f_RouterBaseCost.cmdSave.Position(193,309)
+Gui.f_RouterBaseCost.cmdSave.Caption("Save")
+Gui.f_RouterBaseCost.cmdSave.FontName("Tahoma")
+Gui.f_RouterBaseCost.cmdSave.FontSize(8.25)
+Gui.f_RouterBaseCost.cmdSave.Event(Click,cmdRouterSave_Click)
+Gui.f_RouterBaseCost.cmdSave.TabStop(True)
+Gui.f_RouterBaseCost.cmdSave.TabIndex(3)
+Gui.f_RouterBaseCost.cmdCancel.Create(Button)
+Gui.f_RouterBaseCost.cmdCancel.Enabled(True)
+Gui.f_RouterBaseCost.cmdCancel.Visible(True)
+Gui.f_RouterBaseCost.cmdCancel.Zorder(0)
+Gui.f_RouterBaseCost.cmdCancel.Size(75,23)
+Gui.f_RouterBaseCost.cmdCancel.Position(9,309)
+Gui.f_RouterBaseCost.cmdCancel.Caption("Cancel")
+Gui.f_RouterBaseCost.cmdCancel.FontName("Tahoma")
+Gui.f_RouterBaseCost.cmdCancel.FontSize(8.25)
+Gui.f_RouterBaseCost.cmdCancel.Event(Click,cmdCancel_Click)
+Gui.f_RouterBaseCost.cmdCancel.TabStop(True)
+Gui.f_RouterBaseCost.cmdCancel.TabIndex(4)
+Gui.f_RouterBaseCost.lblRev.Create(Label,"Rev:",True,23,13,0,130,60,True,0,"Tahoma",8.25,,0,0)
+Gui.f_RouterBaseCost.lblRev.BorderStyle(0)
+Gui.f_RouterBaseCost.txtRev.Create(TextBox,"",True,41,20,0,130,75,True,0,"Tahoma",8.25,,1)
+Gui.f_RouterBaseCost.txtRev.Locked(True)
+Gui.f_RouterBaseCost.lblCustName.Create(Label,"Customer Name:",True,80,13,0,77,11,True,0,"Tahoma",8.25,,0,0)
+Gui.f_RouterBaseCost.lblCustName.BorderStyle(0)
+Gui.f_RouterBaseCost.txtCustName.Create(TextBox,"",True,191,20,0,77,28,True,0,"Tahoma",8.25,,1)
+Gui.f_RouterBaseCost.txtCustName.Locked(True)
+Gui.f_RouterBaseCost.lblCustPart.Create(Label,"Customer Part:",True,73,13,0,9,160,True,0,"Tahoma",8.25,,0,0)
+Gui.f_RouterBaseCost.lblCustPart.BorderStyle(0)
+Gui.f_RouterBaseCost.txtCustPart.Create(TextBox,"",True,259,20,0,9,175,True,0,"Tahoma",8.25,,1)
+Gui.f_RouterBaseCost.txtCustPart.Locked(True)
+Gui.f_InvBaseCost..Create(BaseForm)
+Gui.f_InvBaseCost..Caption("Base Cost (6791)")
+Gui.f_InvBaseCost..Size(246,407)
+Gui.f_InvBaseCost..MinX(0)
+Gui.f_InvBaseCost..MinY(0)
+Gui.f_InvBaseCost..Position(0,0)
+Gui.f_InvBaseCost..AlwaysOnTop(False)
+Gui.f_InvBaseCost..FontName("Tahoma")
+Gui.f_InvBaseCost..FontSize(8.25)
+Gui.f_InvBaseCost..ControlBox(True)
+Gui.f_InvBaseCost..MaxButton(False)
+Gui.f_InvBaseCost..MinButton(True)
+Gui.f_InvBaseCost..MousePointer(0)
+Gui.f_InvBaseCost..Moveable(True)
+Gui.f_InvBaseCost..Sizeable(False)
+Gui.f_InvBaseCost..ShowInTaskBar(True)
+Gui.f_InvBaseCost..TitleBar(True)
+Gui.f_InvBaseCost..ShowCompanyCode(False)
+Gui.f_InvBaseCost..Event(UnLoad,f_InvBaseCost_UnLoad)
+Gui.f_InvBaseCost.lblCust.Create(Label,"Customer:",True,50,13,0,8,50,True,0,"Tahoma",8.25,,0,0)
+Gui.f_InvBaseCost.lblCust.BorderStyle(0)
+Gui.f_InvBaseCost.txtCust.Create(TextBox,"",True,66,20,0,8,66,True,0,"Tahoma",8.25,,1)
+Gui.f_InvBaseCost.txtCust.TabStop(True)
+Gui.f_InvBaseCost.txtCust.TabIndex(2)
+Gui.f_InvBaseCost.txtCust.Event(KeyPressEnter,txtCust_KeyPressEnter)
+Gui.f_InvBaseCost.lblCustName.Create(Label,"Customer Name:",True,80,13,0,8,6,True,0,"Tahoma",8.25,,0,0)
+Gui.f_InvBaseCost.lblCustName.BorderStyle(0)
+Gui.f_InvBaseCost.txtCustName.Create(TextBox,"",True,230,20,0,8,22,True,0,"Tahoma",8.25,,1)
+Gui.f_InvBaseCost.txtCustName.TabStop(True)
+Gui.f_InvBaseCost.txtCustName.TabIndex(1)
+Gui.f_InvBaseCost.txtCustName.Event(KeyPressEnter,txtCustName_KeyPressEnter)
+Gui.f_InvBaseCost.lblPart.Create(Label,"Part:",True,24,13,0,8,95,True,0,"Tahoma",8.25,,0,0)
+Gui.f_InvBaseCost.lblPart.BorderStyle(0)
+Gui.f_InvBaseCost.txtPart.Create(TextBox,"",True,116,20,0,8,111,True,0,"Tahoma",8.25,,1)
+Gui.f_InvBaseCost.txtPart.Locked(True)
+Gui.f_InvBaseCost.lblRev.Create(Label,"Rev:",True,23,13,0,129,95,True,0,"Tahoma",8.25,,0,0)
+Gui.f_InvBaseCost.lblRev.BorderStyle(0)
+Gui.f_InvBaseCost.txtRev.Create(TextBox,"",True,38,20,0,129,111,True,0,"Tahoma",8.25,,1)
+Gui.f_InvBaseCost.txtRev.Locked(True)
+Gui.f_InvBaseCost.lblDesc.Create(Label,"Description:",True,57,13,0,8,142,True,0,"Tahoma",8.25,,0,0)
+Gui.f_InvBaseCost.lblDesc.BorderStyle(0)
+Gui.f_InvBaseCost.txtDesc.Create(TextBox,"",True,230,20,0,8,158,True,0,"Tahoma",8.25,,1)
+Gui.f_InvBaseCost.txtDesc.Locked(True)
+Gui.f_InvBaseCost.lblCustPart.Create(Label,"Customer Part:",True,73,13,0,8,190,True,0,"Tahoma",8.25,,0,0)
+Gui.f_InvBaseCost.lblCustPart.BorderStyle(0)
+Gui.f_InvBaseCost.txtCustPart.Create(TextBox,"",True,230,20,0,8,206,True,0,"Tahoma",8.25,,1)
+Gui.f_InvBaseCost.txtCustPart.Locked(True)
+Gui.f_InvBaseCost.lblMetContent.Create(Label,"Metal Content:",True,72,13,0,8,237,True,0,"Tahoma",8.25,,0,0)
+Gui.f_InvBaseCost.lblMetContent.BorderStyle(0)
+Gui.f_InvBaseCost.txtMetContent.Create(TextBox,"",True,230,20,0,8,254,True,0,"Tahoma",8.25,,1)
+Gui.f_InvBaseCost.txtMetContent.Locked(True)
+Gui.f_InvBaseCost.lblBaseCost.Create(Label,"Base Cost:",True,52,13,0,8,286,True,0,"Tahoma",8.25,,0,0)
+Gui.f_InvBaseCost.lblBaseCost.BorderStyle(0)
+Gui.f_InvBaseCost.txtBaseCost.Create(TextBox,"",True,77,20,0,8,302,True,0,"Tahoma",8.25,,1)
+Gui.f_InvBaseCost.txtBaseCost.TabStop(True)
+Gui.f_InvBaseCost.txtBaseCost.TabIndex(4)
+Gui.f_InvBaseCost.txtBaseCost.Mask("$#.0000")
+Gui.f_InvBaseCost.lblFabCost.Create(Label,"Fabrication Cost:",True,82,13,0,157,286,True,0,"Tahoma",8.25,,0,0)
+Gui.f_InvBaseCost.lblFabCost.BorderStyle(0)
+Gui.f_InvBaseCost.txtFabCost.Create(TextBox,"",True,77,20,0,162,302,True,0,"Tahoma",8.25,,1)
+Gui.f_InvBaseCost.txtFabCost.TabStop(True)
+Gui.f_InvBaseCost.txtFabCost.TabIndex(5)
+Gui.f_InvBaseCost.txtFabCost.Mask("$#.0000")
+Gui.f_InvBaseCost.cmdCancel.Create(Button)
+Gui.f_InvBaseCost.cmdCancel.Enabled(True)
+Gui.f_InvBaseCost.cmdCancel.Visible(True)
+Gui.f_InvBaseCost.cmdCancel.Zorder(0)
+Gui.f_InvBaseCost.cmdCancel.Size(75,23)
+Gui.f_InvBaseCost.cmdCancel.Position(8,338)
+Gui.f_InvBaseCost.cmdCancel.Caption("Cancel")
+Gui.f_InvBaseCost.cmdCancel.FontName("Tahoma")
+Gui.f_InvBaseCost.cmdCancel.FontSize(8.25)
+Gui.f_InvBaseCost.cmdCancel.TabStop(True)
+Gui.f_InvBaseCost.cmdCancel.TabIndex(7)
+Gui.f_InvBaseCost.cmdCancel.Event(Click,cmdCancel_Click)
+Gui.f_InvBaseCost.cmdSave.Create(Button)
+Gui.f_InvBaseCost.cmdSave.Enabled(True)
+Gui.f_InvBaseCost.cmdSave.Visible(True)
+Gui.f_InvBaseCost.cmdSave.Zorder(0)
+Gui.f_InvBaseCost.cmdSave.Size(75,23)
+Gui.f_InvBaseCost.cmdSave.Position(164,338)
+Gui.f_InvBaseCost.cmdSave.Caption("Save")
+Gui.f_InvBaseCost.cmdSave.FontName("Tahoma")
+Gui.f_InvBaseCost.cmdSave.FontSize(8.25)
+Gui.f_InvBaseCost.cmdSave.TabStop(True)
+Gui.f_InvBaseCost.cmdSave.TabIndex(6)
+Gui.f_InvBaseCost.cmdSave.Event(Click,cmdInvSave_Click)
+Gui.f_InvBaseCost.cmdCustBrw.Create(Button)
+Gui.f_InvBaseCost.cmdCustBrw.Enabled(True)
+Gui.f_InvBaseCost.cmdCustBrw.Visible(True)
+Gui.f_InvBaseCost.cmdCustBrw.Zorder(0)
+Gui.f_InvBaseCost.cmdCustBrw.Size(23,23)
+Gui.f_InvBaseCost.cmdCustBrw.Position(78,64)
+Gui.f_InvBaseCost.cmdCustBrw.Caption("^")
+Gui.f_InvBaseCost.cmdCustBrw.FontName("Tahoma")
+Gui.f_InvBaseCost.cmdCustBrw.FontSize(8.25)
+Gui.f_InvBaseCost.cmdCustBrw.Event(Click,cmdCustBrw_Click)
+Gui.f_InvBaseCost.cmdCustBrw.TabStop(True)
+Gui.f_InvBaseCost.cmdCustBrw.TabIndex(3)
+Gui.f_QteBaseCost..Create(BaseForm)
+Gui.f_QteBaseCost..Caption("Base Cost (6791)")
+Gui.f_QteBaseCost..Size(244,395)
+Gui.f_QteBaseCost..MinX(0)
+Gui.f_QteBaseCost..MinY(0)
+Gui.f_QteBaseCost..Position(0,0)
+Gui.f_QteBaseCost..AlwaysOnTop(False)
+Gui.f_QteBaseCost..FontName("Tahoma")
+Gui.f_QteBaseCost..FontSize(8.25)
+Gui.f_QteBaseCost..ControlBox(True)
+Gui.f_QteBaseCost..MaxButton(False)
+Gui.f_QteBaseCost..MinButton(True)
+Gui.f_QteBaseCost..MousePointer(0)
+Gui.f_QteBaseCost..Moveable(True)
+Gui.f_QteBaseCost..Sizeable(False)
+Gui.f_QteBaseCost..ShowInTaskBar(True)
+Gui.f_QteBaseCost..TitleBar(True)
+Gui.f_QteBaseCost..Event(UnLoad,f_QteBaseCost_UnLoad)
+Gui.f_QteBaseCost..ShowCompanyCode(False)
+Gui.f_QteBaseCost.lblCust.Create(Label,"Customer:",True,50,13,0,7,4,True,0,"Tahoma",8.25,,0,0)
+Gui.f_QteBaseCost.lblCust.BorderStyle(0)
+Gui.f_QteBaseCost.txtCust.Create(TextBox,"",True,74,20,0,7,20,True,0,"Tahoma",8.25,,1)
+Gui.f_QteBaseCost.txtCust.Locked(True)
+Gui.f_QteBaseCost.txtCust.TabStop(True)
+Gui.f_QteBaseCost.txtCust.TabIndex(4)
+Gui.f_QteBaseCost.lblCustName.Create(Label,"Customer Name:",True,80,13,0,7,50,True,0,"Tahoma",8.25,,0,0)
+Gui.f_QteBaseCost.lblCustName.BorderStyle(0)
+Gui.f_QteBaseCost.txtCustName.Create(TextBox,"",True,229,20,0,7,66,True,0,"Tahoma",8.25,,1)
+Gui.f_QteBaseCost.txtCustName.Locked(True)
+Gui.f_QteBaseCost.lblPart.Create(Label,"Part:",True,24,13,0,7,96,True,0,"Tahoma",8.25,,0,0)
+Gui.f_QteBaseCost.lblPart.BorderStyle(0)
+Gui.f_QteBaseCost.txtPart.Create(TextBox,"",True,122,20,0,7,111,True,0,"Tahoma",8.25,,1)
+Gui.f_QteBaseCost.txtPart.Locked(True)
+Gui.f_QteBaseCost.lblRev.Create(Label,"Rev:",True,23,13,0,135,96,True,0,"Tahoma",8.25,,0,0)
+Gui.f_QteBaseCost.lblRev.BorderStyle(0)
+Gui.f_QteBaseCost.txtRev.Create(TextBox,"",True,46,20,0,135,111,True,0,"Tahoma",8.25,,1)
+Gui.f_QteBaseCost.txtRev.Locked(True)
+Gui.f_QteBaseCost.lblDescription.Create(Label,"Description:",True,57,13,0,7,142,True,0,"Tahoma",8.25,,0,0)
+Gui.f_QteBaseCost.lblDescription.BorderStyle(0)
+Gui.f_QteBaseCost.txtDesc.Create(TextBox,"",True,229,20,0,7,157,True,0,"Tahoma",8.25,,1)
+Gui.f_QteBaseCost.txtDesc.Locked(True)
+Gui.f_QteBaseCost.lblCustPart.Create(Label,"Customer Part:",True,73,13,0,7,188,True,0,"Tahoma",8.25,,0,0)
+Gui.f_QteBaseCost.lblCustPart.BorderStyle(0)
+Gui.f_QteBaseCost.txtCustPart.Create(TextBox,"",True,229,20,0,7,203,True,0,"Tahoma",8.25,,1)
+Gui.f_QteBaseCost.txtCustPart.Locked(True)
+Gui.f_QteBaseCost.lblMetContent.Create(Label,"Metal Content:",True,72,13,0,7,234,True,0,"Tahoma",8.25,,0,0)
+Gui.f_QteBaseCost.lblMetContent.BorderStyle(0)
+Gui.f_QteBaseCost.txtMetContent.Create(TextBox,"",True,229,20,0,7,250,True,0,"Tahoma",8.25,,1)
+Gui.f_QteBaseCost.txtMetContent.Locked(True)
+Gui.f_QteBaseCost.lblBaseCost.Create(Label,"Base Cost:",True,52,13,0,7,280,True,0,"Tahoma",8.25,,0,0)
+Gui.f_QteBaseCost.lblBaseCost.BorderStyle(0)
+Gui.f_QteBaseCost.txtBaseCost.Create(TextBox,"",True,83,20,0,7,296,True,0,"Tahoma",8.25,,1)
+Gui.f_QteBaseCost.txtBaseCost.TabStop(True)
+Gui.f_QteBaseCost.txtBaseCost.TabIndex(1)
+Gui.f_QteBaseCost.txtBaseCost.Mask("$#0.0000")
+Gui.f_QteBaseCost.cmdCancel.Create(Button)
+Gui.f_QteBaseCost.cmdCancel.Enabled(True)
+Gui.f_QteBaseCost.cmdCancel.Visible(True)
+Gui.f_QteBaseCost.cmdCancel.Zorder(0)
+Gui.f_QteBaseCost.cmdCancel.Size(75,23)
+Gui.f_QteBaseCost.cmdCancel.Position(7,334)
+Gui.f_QteBaseCost.cmdCancel.Caption("Cancel")
+Gui.f_QteBaseCost.cmdCancel.FontName("Tahoma")
+Gui.f_QteBaseCost.cmdCancel.FontSize(8.25)
+Gui.f_QteBaseCost.cmdCancel.Event(Click,cmdCancel_Click)
+Gui.f_QteBaseCost.cmdCancel.TabStop(True)
+Gui.f_QteBaseCost.cmdCancel.TabIndex(3)
+Gui.f_QteBaseCost.cmdSave.Create(Button)
+Gui.f_QteBaseCost.cmdSave.Enabled(True)
+Gui.f_QteBaseCost.cmdSave.Visible(True)
+Gui.f_QteBaseCost.cmdSave.Zorder(0)
+Gui.f_QteBaseCost.cmdSave.Size(75,23)
+Gui.f_QteBaseCost.cmdSave.Position(161,334)
+Gui.f_QteBaseCost.cmdSave.Caption("Save")
+Gui.f_QteBaseCost.cmdSave.FontName("Tahoma")
+Gui.f_QteBaseCost.cmdSave.FontSize(8.25)
+Gui.f_QteBaseCost.cmdSave.TabStop(True)
+Gui.f_QteBaseCost.cmdSave.TabIndex(2)
+Gui.f_QteBaseCost.cmdSave.Event(Click,cmdQteSave)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+V.Global.bError.Declare(Boolean)
+V.Global.bUnattended.Declare(Boolean)
+Program.External.Include.Library("6021.lib")
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.Try
+Function.Intrinsic.UI.UsePixels ' Allows you to use Pixels instead of Twips throughout
+
+'open the connection to the DB
+F.ODBC.Connection!con.OpenConnection(V.Ambient.PDSN, V.Ambient.PUser, V.Ambient.PPass)
+
+F.Intrinsic.Control.SelectCase(V.Caller.Hook)
+F.Intrinsic.Control.Case(45310)
+'popualte contract pricing 
+	V.Passed.000059.Set("Base Cost")
+	F.Intrinsic.Control.CallSub(f_Main_UnLoad)
+F.Intrinsic.Control.Case(45320)
+'script 1 hook contract pricing
+	F.Intrinsic.Control.CallSub(LoadBaseCost)
+	Gui.f_ConPrice..ApplyTheme
+	Gui.f_ConPrice..Show
+
+F.Intrinsic.Control.Case(28530)
+'Shipments New Pre Save
+	F.Intrinsic.Control.CallSub(SurchargeCheck)
+	F.Intrinsic.Control.CallSub(f_Main_UnLoad)
+F.Intrinsic.Control.Case(28532)	
+'Shipments New Post Save
+	F.Intrinsic.Control.CallSub(ShipCostProcess)
+	F.Intrinsic.Control.CallSub(f_Main_UnLoad)
+F.Intrinsic.Control.Case(11210)
+'Router Lines Populate
+	'set the script 3 button title
+	V.Passed.000203.Set("Base Cost")
+	F.Intrinsic.Control.CallSub(f_Main_UnLoad)
+
+F.Intrinsic.Control.Case(11300)
+'Router Lines Pre Save
+	F.Intrinsic.Control.CallSub(RterLinePreSave)
+	F.Intrinsic.Control.CallSub(f_Main_UnLoad)
+F.Intrinsic.Control.Case(11301)
+'Router Lines Post Save
+	F.Intrinsic.Control.CallSub(RterLinePostSave)
+	F.Intrinsic.Control.CallSub(f_Main_UnLoad)
+F.Intrinsic.Control.Case(11430)
+'Router Lines Script 3
+	F.Intrinsic.Control.CallSub(LoadRouterBaseCost)
+	Gui.f_RouterBaseCost..ApplyTheme
+	Gui.f_RouterBaseCost..Show
+F.Intrinsic.Control.Case(10260)
+'quote lines screen populate
+	'set the script 3 button title
+	V.Passed.000203.Set("Base Cost")
+	F.Intrinsic.Control.CallSub(f_Main_UnLoad)
+
+F.Intrinsic.Control.Case(10690)
+'quote lines script 3 button
+	F.Intrinsic.Control.CallSub(LoadQuoteBaseCost)
+	Gui.f_QteBaseCost..ApplyTheme
+	Gui.f_QteBaseCost..Show
+
+F.Intrinsic.Control.Case(10120)
+'add case statements for inventory master populate 
+	'set the script 3 button title
+	V.Passed.000070.Set("Base Cost")
+	F.Intrinsic.Control.CallSub(f_Main_UnLoad)
+F.Intrinsic.Control.Case(10230)
+'add case statemest for inventory master script 3 click
+	F.Intrinsic.Control.CallSub(LoadInvBaseCost)
+	Gui.f_InvBaseCost..ApplyTheme
+	Gui.f_InvBaseCost..Show
+F.Intrinsic.Control.CaseElse
+	'callsub to build the grid
+	F.Intrinsic.Control.CallSub(BuildGrid)
+	'callsub to format the grid
+	F.Intrinsic.Control.CallSub(FormatGrid)
+
+	Gui.f_PriceEntry..ApplyTheme
+	'show the form
+	Gui.f_PriceEntry..Show
+F.Intrinsic.Control.EndSelect
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6791", "ProjectTitle", "Metal Surcharges ", "Callback", "f_Main_UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+Program.Sub.LoadBaseCost.Start
+F.Intrinsic.Control.Try
+V.Local.sPart.Declare(String)
+V.Local.sRev.Declare(String)
+V.Local.sLoc.Declare(String)
+V.Local.sFullPart.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sMetalContent.Declare(String)
+V.Local.sDescription.Declare(String)
+V.Local.sCustomer.Declare(String)
+v.Local.fBaseCost.Declare(Float)
+V.Local.sPriceCategory.Declare(String)
+
+Gui.f_ConPrice.txtCust.Text(V.Passed.000002.Trim)
+V.Local.sCustomer.Set(V.Passed.000002)
+
+'Query customer master to check that the customer has a price category of S
+F.Intrinsic.String.Build("SELECT PRICE_CATG FROM V_CUSTOMER_INTL WHERE CUSTOMER = '{0}'", V.Local.sCustomer.Trim, V.Local.sSQL)
+F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sPriceCategory)
+F.Intrinsic.Control.If(V.Local.sPriceCategory.Trim,<>,"S")
+	F.Intrinsic.UI.Msgbox("The Customer selected is not setup for Custom Metal Surcharges", "Invalid Information")
+	F.Intrinsic.Control.CallSub(f_Main_UnLoad)
+F.Intrinsic.Control.EndIf
+
+V.Local.sPart.Set(V.Passed.000001.Trim)
+F.Intrinsic.Control.If(V.Local.sPart.Trim,<>,"")
+	F.Intrinsic.String.RPad(V.Local.sPart, " ", 17, V.Local.sPart)
+	Gui.f_ConPrice.txtPart.Text(V.Local.sPart)
+	V.Local.sRev.Set(V.Passed.000015.Trim)
+	F.Intrinsic.String.RPad(V.Local.sRev, " ",3, V.Local.sRev)
+	Gui.f_ConPrice.txtRev.Text(V.Local.sRev)
+	F.Intrinsic.String.Build("{0}{1}", V.Local.sPart, V.Local.sRev, V.Local.sFullPart)
+	V.Local.sLoc.Set(V.Passed.000016.Trim)
+	'Gui.f_ConPrice.txtPart.Text(V.Local.sFullPart)
+	
+	'query customer master to get the customer name
+	F.Intrinsic.String.Build("SELECT NAME_CUSTOMER FROM V_CUSTOMER_MASTER WHERE CUSTOMER = '{0}'", V.Local.sCustomer.Trim, V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSQL, V.Local.sRet)
+	f.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"")
+		Gui.f_ConPrice.txtCustName.Text(V.Local.sRet.Trim)
+	f.Intrinsic.Control.EndIf
+
+	'query info 1 on inventory master to get metal content
+	'query inventory xref to get the customer part number
+	F.Intrinsic.String.Build("SELECT TEXT_INFO1, DESCRIPTION FROM V_INVENTORY_ALL WHERE PART = '{0}'", v.Local.sFullPart, V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"")
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+		V.Local.sMetalContent.Set(V.Local.sRet(0).Trim)
+		Gui.f_ConPrice.txtMetalCont.Text(V.Local.sMetalContent.Trim)
+		V.Local.sDescription.Set(V.Local.sRet(1).Trim)
+		Gui.f_ConPrice.txtDesc.Text(V.Local.sDescription.Trim)
+	
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.String.Build("SELECT CUSTOMER_PART FROM V_INV_CROSS_REF WHERE PART = '{0}' AND CUSTOMER = '{1}'", v.Local.sFullPart, V.Local.sCustomer.Trim, V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"")
+		Gui.f_ConPrice.txtCustPart.Text(V.Local.sRet.Trim)
+	F.Intrinsic.Control.EndIf
+
+	'query custom table to get the base cost if it has already been entered
+	F.Intrinsic.String.Build("SELECT BASE_COST FROM GCG_6791_BASE_COST WHERE CUSTOMER = '{0}' AND PART = '{1}' AND REV = '{2}'", V.Local.sCustomer.Trim, V.Local.sPart.Trim, V.Local.sRev.Trim, V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSQL, V.Local.fBaseCost)
+	F.Intrinsic.Control.If(v.Local.fBaseCost,<>,0)
+		Gui.f_ConPrice.txtCost.Text(v.Local.fBaseCost)
+		Gui.f_ConPrice.cmdSave.SetFocus(True)
+	F.Intrinsic.Control.Else
+		Gui.f_ConPrice.txtCost.Text("")
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else
+	F.Intrinsic.UI.Msgbox("You must select a Part before you can continue!","Required Field")
+	F.Intrinsic.Control.CallSub(f_Main_UnLoad)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6791", "ProjectTitle", "Metal Surcharges ", "Callback", "f_Main_UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.LoadBaseCost.End
+
+Program.Sub.cmdSave_Click.Start
+F.Intrinsic.Control.Try
+V.Local.sCust.Declare(String)
+V.Local.sCustomerPart.Declare(String)
+V.Local.sMetalContent.Declare(String)
+V.Local.fBaseCost.Declare(Float)
+V.Local.sPart.Declare(String)
+V.Local.sRev.Declare(String)
+V.Local.sCallingScreen.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sBaseCost.Declare(String)
+
+
+V.Local.sCallingScreen.Set("CP")
+
+'get screen data
+V.Local.sCust.Set(V.Screen.f_ConPrice!txtCust.Text)
+V.Local.sPart.Set(V.Screen.f_ConPrice!txtPart.Text)
+V.Local.sRev.Set(V.Screen.f_ConPrice!txtRev.Text)
+V.Local.sMetalContent.Set(V.Screen.f_ConPrice!txtMetalCont.Text)
+V.Local.sBaseCost.Set(V.Screen.f_ConPrice!txtCost.Text)
+F.Intrinsic.String.Replace(V.Local.sBaseCost, "$", "", V.Local.sBaseCost)
+V.Local.fBaseCost.Set(V.Local.sBaseCost.Float)
+F.Intrinsic.Math.Round(V.Local.fBaseCost, 4, V.Local.fBaseCost)
+
+'check to see if a record exists for the customer
+F.Intrinsic.String.Build("SELECT * FROM GCG_6791_BASE_COST WHERE CUSTOMER = '{0}' AND PART = '{1}' AND REV = '{2}'", V.Local.sCust.Trim, V.Local.sPart.Trim, V.Local.sRev.Trim, V.Local.sSQL)
+F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"")
+	'update the record
+	F.Intrinsic.String.Build("UPDATE GCG_6791_BASE_COST SET BASE_COST = '{0}' WHERE  CUSTOMER = '{1}' AND PART = '{2}' AND REV = '{3}'", V.Local.fBaseCost, V.Local.sCust.Trim, V.Local.sPart.Trim, V.Local.sRev.Trim, V.Local.sSQL)
+	F.ODBC.Connection!con.Execute(V.Local.sSQL)
+
+F.Intrinsic.Control.ElseIf(V.Local.sRet.Trim,=,"")
+	'insert the record
+	F.Intrinsic.String.Build("INSERT INTO GCG_6791_BASE_COST (CUSTOMER, PART, REV, METAL_CONTENT, BASE_COST) VALUES ('{0}','{1}', '{2}', '{3}', '{4}')", V.Local.sCust.Trim, v.Local.sPart.Trim, V.Local.sRev.Trim, V.Local.sMetalContent.Trim, v.Local.fBaseCost, V.Local.sSQL)
+	F.ODBC.Connection!con.Execute(V.Local.sSQL)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.UI.Msgbox("Base Cost Saved!", "Save Successful")
+F.Intrinsic.Control.CallSub(f_Main_UnLoad)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6791", "ProjectTitle", "Metal Surcharges ", "Callback", "f_Main_UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdSave_Click.End
+
+Program.Sub.f_ConPrice_UnLoad.Start
+F.Intrinsic.Control.Try
+V.Local.iRet.Declare(Long)
+
+'prompt the user with a message asking if they'd like to save the records. 
+F.Intrinsic.UI.Msgbox("Are you sure you want to cancel?", "Warning", 4, V.Local.iRet)
+F.Intrinsic.Control.If(V.Local.iRet,=,6)
+'if they say yes, call unload sub
+	F.Intrinsic.Control.CallSub(f_Main_Unload)
+F.Intrinsic.Control.ElseIf(V.Local.iRet,=,7)
+'if they say no, exit sub
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6791", "ProjectTitle", "Metal Surcharges ", "Callback", "f_Main_UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.f_ConPrice_UnLoad.End
+
+Program.Sub.SurchargeCheck.Start
+F.Intrinsic.Control.Try
+V.Local.sSQL.Declare(String)
+V.Local.sCustomer.Declare(String)
+V.Local.sPriceCat.Declare(String)
+V.Local.fComexPrice.Declare(Float,0)
+V.Local.sDate.Declare(String)
+
+V.Local.sCustomer.Set(V.Passed.000204)
+'Query customer master to check that the customer has a price category of S
+F.Intrinsic.String.Build("SELECT PRICE_CATG FROM V_CUSTOMER_INTL WHERE CUSTOMER = '{0}'", V.Local.sCustomer.Trim, V.Local.sSQL)
+F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sPriceCat)
+F.Intrinsic.Control.If(V.Local.sPriceCat.Trim,<>,"S")
+	F.Intrinsic.UI.Msgbox("The Customer selected is not setup for Custom Metal Surcharges", "Invalid Information")
+	F.Intrinsic.Control.CallSub(f_Main_UnLoad)
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Format(V.Ambient.Date, "YYYY-MM-DD",V.Local.sDate)
+	F.Intrinsic.String.Build("SELECT COMEX_PRICE FROM GCG_6791_COMEX_PRICE WHERE COMEX_DATE = '{0}'", V.Local.sDate, V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.fComexPrice)
+	F.Intrinsic.Control.If(V.Local.fComexPrice,=,0)
+
+		v.Passed.777777.Set(1)
+		F.Intrinsic.UI.Msgbox("The COMEX Price for today has not been entered. Please enter the COMEX Price for today and try again.", "Missing COMEX Price")
+		F.Intrinsic.Control.CallSub(f_Main_UnLoad)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6791", "ProjectTitle", "Metal Surcharges ", "Callback", "f_Main_UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.SurchargeCheck.End
+
+Program.Sub.ShipCostProcess.Start
+F.Intrinsic.Control.Try
+V.Local.fComexPrice.Declare(Float)
+V.Local.fCost.Declare(Float)
+V.Local.fPrice.Declare(Float)
+V.Local.fSurchargePrice.Declare(Float)
+V.Local.fShipQty.Declare(Float)
+V.Local.fTotQty.Declare(Float)
+V.Local.fTotalPrice.Declare(Float, 0.00)
+V.Local.fBaseCost.Declare(Float)
+V.Local.fAltCost.Declare(Float)
+V.Local.fUnitPrice.Declare(Float)
+V.Local.iCnt.Declare(Long)
+V.Local.iRows.Declare(Long)
+V.Local.sCustomer.Declare(String)
+V.Local.sPriceCat.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sTemp.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sRet2.Declare(String)
+V.Local.sPart.Declare(String)
+V.Local.sRev.Declare(String)
+V.Local.sOrderNo.Declare(String)
+V.Local.sOrderLine.Declare(String)
+V.Local.sSurchargeOrderLine.Declare(String)
+V.Local.sGLAcct.Declare(String)
+V.Local.sMetOrderLine.Declare(String)
+V.Local.sSurDesc.Declare(String)
+V.Local.sUser1.Declare(String)
+V.Local.sDate.Declare(String)
+V.Local.sFullPart.Declare(String)
+v.Local.iConDB.Declare
+v.Local.iStatus.Declare
+'v.Local.iNumOrder.Declare
+v.Local.sNumOrder.Declare(String, "")
+v.Local.sNumSeq.Declare(String, "")
+v.Local.bCharge.Declare(Boolean, True)
+v.Local.sPackingList.Declare(String, "")
+V.Local.sOrderSuffix.Declare(String)
+v.Local.sPSQLDate.Declare
+v.Local.sPSQLTime.Declare
+V.Local.sRet3.Declare(String)
+v.Local.sShipTo.Declare(String)
+
+
+V.Local.sCustomer.Set(V.Passed.000204)
+V.Local.sPackingList.Set(V.Passed.000178)
+
+f.Intrinsic.String.Format(v.Ambient.Date, "mmddyy", v.Local.sPSQLDate)
+f.Intrinsic.String.Format(v.Ambient.Time, "hhnnss", v.Local.sPSQLTime)
+
+V.Local.sOrderSuffix.Set(V.Passed.FIRST-SEQ)
+
+
+'Query customer master to check that the customer has a price category of S
+F.Intrinsic.String.Build("SELECT PRICE_CATG FROM V_CUSTOMER_INTL WHERE CUSTOMER = '{0}'", V.Local.sCustomer.Trim, V.Local.sSQL)
+F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sPriceCat)
+F.Intrinsic.Control.If(V.Local.sPriceCat.Trim,<>,"S")
+	F.Intrinsic.UI.Msgbox("The Customer selected is not setup for Custom Metal Surcharges", "Invalid Information")
+	F.Intrinsic.Control.CallSub(f_Main_UnLoad)
+F.Intrinsic.Control.EndIf
+
+'load the BDF
+F.Intrinsic.BDF.Load("AUX001", "AUX001")
+F.Intrinsic.BDF.Clone("AUX001", "TempBDF")
+'read the BDF
+F.Intrinsic.BDF.ReadRowCount("AUX001", V.Local.iRows)
+F.Intrinsic.Math.Sub(V.Local.iRows,1,V.Local.iRows)
+F.Intrinsic.Control.If(V.Local.iRows,>,-1)
+	
+'loop through the grid
+	F.Intrinsic.Control.For(V.Local.iCnt, 0, V.Local.iRows,1)
+		F.Intrinsic.BDF.ReadRow("AUX001", V.Local.iCnt, V.Local.sTemp)
+		F.Intrinsic.String.Split(V.Local.sTemp, "|~|", V.Local.sRet)
+		V.Local.sOrderNo.Set(V.Local.sRet(0).Trim)
+		F.Intrinsic.String.LPad(V.Local.sOrderNo.Trim, "0", 7, V.Local.sOrderNo)
+		V.Local.sOrderLine.Set(V.Local.sRet(1).Trim)
+		F.Intrinsic.String.LPad(V.Local.sOrderLine.Trim,"0", 3, V.Local.sOrderLine)
+		F.Intrinsic.String.RPad(V.Local.sOrderLine, "0", 4, V.Local.sOrderLine)
+		V.Local.fShipQty.Set(V.Local.sRet(3).Float)
+		V.Local.sPart.Set(V.Local.sRet(8))
+		
+		V.Local.sFullPart.Set(V.Local.sRet(8))
+		F.Intrinsic.String.RPad(V.Local.sFullPart, " ", 20, V.Local.sFullPart)
+		F.Intrinsic.String.Right(V.Local.sFullPart, 3, V.Local.sRev)
+		F.Intrinsic.String.Left(V.Local.sFullPart, 17, V.Local.sPart)
+		
+		F.Intrinsic.Control.If(V.Local.sPackingList.Trim,=,"")
+			F.Intrinsic.String.Build("SELECT PCK_NO FROM V_SHIPMENT_HEADER WHERE ORDER_NO = '{0}' AND ORDER_SUFFIX  = '{1}' AND CUSTOMER = '{2}' ", V.Local.sOrderNo.Trim, V.Local.sOrderSuffix.Trim,V.Local.sCustomer.Trim, V.Local.sSQL)
+			F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sPackingList)
+		F.Intrinsic.Control.EndIf
+		
+		F.Intrinsic.String.Build("SELECT INFO_1 FROM V_ORDER_LINES WHERE ORDER_NO = '{0}' AND RECORD_NO = '{1}' AND CUSTOMER = '{2}' ", V.Local.sOrderNo.Trim, V.Local.sOrderLine.Trim,V.Local.sCustomer.Trim, V.Local.sSQL)
+		F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sUser1)
+		F.Intrinsic.Control.If(V.Local.sUser1.Trim,<>,"", "OR", V.Local.sUser1.Long,<>,0)
+			F.Intrinsic.String.Build("SELECT SHIP_ID FROM V_ORDER_LINES WHERE ORDER_NO = '{0}' AND RECORD_NO = '{1}' AND CUSTOMER = '{2}' ", V.Local.sOrderNo.Trim, V.Local.sOrderLine.Trim,V.Local.sCustomer.Trim, V.Local.sSQL)
+			F.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSQL, V.Local.sShipTo)
+			
+			F.Intrinsic.String.Format(V.Ambient.Date, "YYYY-MM-DD",V.Local.sDate)
+			'query comex daily price for today
+			F.Intrinsic.String.Build("SELECT COMEX_PRICE FROM GCG_6791_COMEX_PRICE WHERE COMEX_DATE = '{0}'", V.Local.sDate, V.Local.sSQL)
+			F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.fComexPrice)
+			F.Intrinsic.Control.If(V.Local.fComexPrice,<>,0)
+				
+				'query base cost for the part and customer
+				f.Intrinsic.String.Build("SELECT BASE_COST FROM GCG_6791_BASE_COST WHERE CUSTOMER = '{0}' AND PART  = '{1}' AND REV = '{2}'", v.Local.sCustomer.Trim, v.Local.sPart, v.Local.sRev, v.Local.sSQL)
+				F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.fBaseCost)
+				F.Intrinsic.Control.If(V.Local.fBaseCost,=,0)
+					F.Intrinsic.String.Build("SELECT AMT_ALT_COST FROM V_INVENTORY_ALL WHERE PART = '{0}'", V.Local.sFullPart, V.Local.sSQL)
+					F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.fAltCost)
+					F.Intrinsic.Math.Sub(V.Local.fComexPrice, V.Local.fAltCost, V.Local.fCost)
+				F.Intrinsic.Control.Else
+					'subtract base cost from comex price
+					F.Intrinsic.Math.Sub(V.Local.fComexPrice, V.Local.fBaseCost, V.Local.fCost)
+				F.Intrinsic.Control.EndIf
+			
+				'multiply the difference by the shipped qty for the line, multiply by metal weight (info 1 field)
+				F.Intrinsic.Math.Mult(V.Local.fCost, V.Local.fShipQty, V.Local.fPrice)
+				F.Intrinsic.Math.Mult(V.Local.fPrice, V.Local.sUser1.Float, V.Local.fPrice)
+				
+				'add price to total price 
+				F.Intrinsic.Control.If(V.Local.fTotalPrice,=,0)
+					V.Local.fTotalPrice.Set(V.Local.fPrice)
+				F.Intrinsic.Control.Else
+					F.Intrinsic.Math.Add(V.Local.fTotalPrice, v.Local.fPrice, V.Local.fTotalPrice)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.iCnt)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Local.fTotalPrice,>,0)
+	v.Local.sNumSeq.Set("7500")
+	V.Local.sOrderNo.Set(V.Passed.FIRST-ORDER)
+	v.Local.sNumOrder.Set(V.Local.sOrderNo.Long)
+	V.Local.sOrderSuffix.Set(V.Passed.FIRST-SEQ.Long)
+	
+	
+	F.ODBC.Connection!con.ExecuteAndReturn("SELECT ORDER_LINE, DESCR, PRICE,GL_ACCOUNT, PART FROM V_SHIPPING_CHARGES WHERE UCASE(KEY_TYPE) = 'SURCHARGE' and ORDER_LINE = 7500", V.Local.sRet2)
+	F.Intrinsic.Control.If(V.Local.sRet2.Trim,<>,"")
+		F.Intrinsic.String.Split(V.Local.sRet2,"*!*", V.Local.sRet2)
+		V.Local.sSurchargeOrderLine.Set(V.Local.sRet2(0).Trim)
+		V.Local.sSurDesc.Set(V.Local.sRet2(1).Trim)
+		F.Intrinsic.String.RPad(V.Local.sSurDesc, " ", 20, V.Local.sSurDesc)
+		V.Local.fSurchargePrice.Set(V.Local.sRet2(2).Float)
+		V.Local.sGLAcct.Set(V.Local.sRet2(3).Trim)
+		V.Local.sPart.Set(V.Local.sRet2(4).Trim)
+		f.Intrinsic.String.RPad(v.Local.sPart, " ", 20, v.Local.sPart)
+	F.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.String.Build("Select order_rec From V_SHIPMENT_LINES where Order_No = '{0}' and order_rec = '7500' and pck_no = '{1}'", v.Local.sNumOrder, v.Local.sPackingList, v.Local.sSQL)
+	f.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSQL, v.Local.sRet)
+	
+	f.Global.Object.CreateDB("DB", v.Local.iConDB)
+	f.Global.Object.Create("shipLine", "Sales.Shipping.ShipmentLine", "DB", v.Local.iConDB)
+	f.Global.Object.SetValue("shipLine", "AdditionalCharge.IsShippingCharge", v.Local.bCharge)
+	f.Global.Object.SetValue("shipLine", "SalesOrderNumber", v.Local.sNumOrder)
+	f.Global.Object.SetValue("shipLine", "SalesOrderLineNumber", v.Local.sNumSeq)
+	f.Global.Object.SetValue("shipLine", "ShipmentSequence", V.Local.sOrderSuffix)
+		
+	f.Global.Object.SetValue("shipLine", "SalesOrder.Customer.CustomerNumberFO", v.Local.sCustomer)
+	'F.Global.Object.SetValue("shipLine", "SalesOrderLine.Part.PartNumber", V.Local.sPart)
+	f.Global.Object.SetValue("shipLine", "SalesOrderLine.Part.Description.Primary", V.Local.sSurDesc)
+	f.Global.Object.SetValue("shipLine", "Shipment.Consignment.Original.Shipment.Packing.PackingListNumberFO", v.Local.sPackingList)
+	f.Global.Object.SetValue("shipLine", "Shipment.Packing.PackingListNumberFO", v.Local.sPackingList)
+	'f.Global.Object.SetValue("shipLine", "Shipment.Invoicing.InvoiceNumberFO", v.Local.sPackingList)
+		
+	f.Global.Object.SetValue("shipLine", "SalesOrderLine.Accounting.Account.AccountNumber", V.Local.sGLAcct)
+	f.Global.Object.SetValue("shipLine", "SalesOrderLine.Pricing.MonetaryValue.Customer.Unit", V.Local.fTotalPrice)
+	f.Global.Object.SetValue("shipLine", "SalesOrderLine.Pricing.MonetaryValue.Customer.Extended", V.Local.fTotalPrice)
+	f.Global.Object.SetValue("shipLine", "SalesOrderLine.Pricing.MonetaryValue.Company.Unit", V.Local.fTotalPrice)
+	f.Global.Object.SetValue("shipLine", "SalesOrderLine.Pricing.MonetaryValue.Company.Extended", V.Local.fTotalPrice)
+	f.Global.Object.SetValue("shipLine", "SalesOrderLine.Quantity.Ordered", 1)
+	f.Global.Object.SetValue("shipLine", "Quantity.Shipped", 1)
+	F.Global.Object.SetValue("shipLine", "SalesOrderLine.Delivery.CustomerShipTo.CustomerShipToNumber", V.Local.sShipTo.Trim)
+	
+	f.Intrinsic.Control.If(v.Local.sRet.Trim, =, "")
+		f.Global.Object.Insert("shipLine",v.Local.iStatus)
+	f.Intrinsic.Control.Else
+		f.Global.Object.Update("shipLine", v.Local.iStatus)
+	f.Intrinsic.Control.EndIf
+	
+	V.Local.sRet.Set("")
+	F.Intrinsic.String.LPad(V.Local.sOrderSuffix, "0", 4, V.Local.sOrderSuffix)
+	f.Intrinsic.String.Build("Select Order_num from SHIP_CHARGE_REQ where Order_num = '{0}' and seq = '{1}' and line = '{2}'", V.Local.sOrderNo, V.Local.sOrderSuffix, "7500", v.Local.sSQL)
+	f.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSQL, v.Local.sRet)
+		
+	f.Intrinsic.Control.If(v.Local.sRet, =, "")
+		
+		f.Intrinsic.String.Build("Insert into  SHIP_CHARGE_REQ (Order_Num, Seq, Line, Part, Date_Added, Time_Added, Added_By, Pgm_Added) Values ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}')", v.Local.sOrderNo, V.Local.sOrderSuffix, "7500", v.Local.sPart, v.Local.sPSQLDate, v.Local.sPSQLTime, v.Caller.User, "GCG_6791", v.Local.sSQL)
+		f.ODBC.Connection!con.Execute(v.Local.sSQL)
+			
+	f.Intrinsic.Control.EndIf			
+	'Close Objects
+	Function.Global.Object.Dispose("shipLine")
+	Function.Global.Object.CloseConnection("DB", v.Local.iConDB)
+F.Intrinsic.Control.EndIf
+
+
+f.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6791", "ProjectTitle", "Metal Surcharges ", "Callback", "f_Main_UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.ShipCostProcess.End
+
+Program.Sub.LoadRouterBaseCost.Start
+F.Intrinsic.Control.Try
+V.Local.sPart.Declare(String)
+V.Local.sRev.Declare(String)
+V.Local.sLoc.Declare(String)
+V.Local.sFullPart.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sMetalContent.Declare(String)
+V.Local.sDescription.Declare(String)
+V.Local.sCustomer.Declare(String)
+v.Local.fBaseCost.Declare(Float)
+V.Local.fFabCost.Declare(Float)
+V.Local.sRouter.Declare(String)
+
+V.Local.sRouter.Set(V.Passed.ROUTER-NUM.Trim)
+'query router header to get the customer
+F.Intrinsic.String.Build("SELECT CUSTOMER FROM V_ROUTER_HEADER WHERE ROUTER = '{0}'", v.Local.sRouter, V.Local.sSQL)
+F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sCustomer)
+F.Intrinsic.Control.If(V.Local.sCustomer.Trim,<>,"")
+	Gui.f_RouterBaseCost.txtCust.Text(V.Local.sCustomer)
+F.Intrinsic.Control.EndIf
+
+V.Local.sFullPart.Set(V.Passed.000112)
+
+F.Intrinsic.Control.If(V.Local.sFullPart.Trim,<>,"")
+	Gui.f_RouterBaseCost.txtPart.Text(V.Passed.000112)
+
+	Gui.f_RouterBaseCost.txtDesc.Text(V.Passed.000121.Trim)
+	F.Intrinsic.String.RPad(V.Local.sFullPart, " ", 20, V.Local.sFullPart)
+	F.Intrinsic.String.Left(V.Local.sFullPart, 17, V.Local.sPart)
+	F.Intrinsic.String.Right(V.Local.sFullPart, 3, V.Local.sRev)
+	
+	Gui.f_RouterBaseCost.txtPart.Text(V.Local.sPart)
+	Gui.f_RouterBaseCost.txtRev.Text(V.Local.sRev)
+
+		
+	'query customer master to get the customer name
+	F.Intrinsic.String.Build("SELECT NAME_CUSTOMER FROM V_CUSTOMER_MASTER WHERE CUSTOMER = '{0}'", V.Local.sCustomer.Trim, V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSQL, V.Local.sRet)
+	f.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"")
+		Gui.f_RouterBaseCost.txtCustName.Text(V.Local.sRet.Trim)
+	f.Intrinsic.Control.EndIf
+
+	'query info 1 on inventory master to get metal content
+	'query inventory xref to get the customer part number
+	F.Intrinsic.String.Build("SELECT TEXT_INFO1, DESCRIPTION FROM V_INVENTORY_ALL WHERE PART = '{0}'", v.Local.sFullPart, V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"")
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+		V.Local.sMetalContent.Set(V.Local.sRet(0).Trim)
+		Gui.f_RouterBaseCost.txtMetCont.Text(V.Local.sMetalContent.Trim)
+		V.Local.sDescription.Set(V.Local.sRet(1).Trim)
+		Gui.f_RouterBaseCost.txtDesc.Text(V.Local.sDescription.Trim)
+	
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.String.Build("SELECT CUSTOMER_PART FROM V_INV_CROSS_REF WHERE PART = '{0}'", v.Local.sFullPart, V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"")
+		Gui.f_RouterBaseCost.txtCustPart.Text(V.Local.sRet.Trim)
+	F.Intrinsic.Control.EndIf
+
+	'query custom table to get the base cost if it has already been entered
+	F.Intrinsic.String.Build("SELECT BASE_COST FROM GCG_6791_BASE_COST WHERE CUSTOMER = '{0}' AND PART = '{1}' AND REV = '{2}'", V.Local.sCustomer.Trim, V.Local.sPart.Trim, V.Local.sRev.Trim, V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSQL, V.Local.fBaseCost)
+	F.Intrinsic.Control.If(v.Local.fBaseCost,<>,0)
+		Gui.f_RouterBaseCost.txtBasecost.Text(v.Local.fBaseCost)
+		Gui.f_RouterBaseCost.cmdSave.SetFocus(True)
+	F.Intrinsic.Control.Else
+		Gui.f_RouterBaseCost.txtBasecost.Text("")
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.String.Build("SELECT FAB_COST FROM GCG_6791_BASE_COST WHERE  CUSTOMER = '{0}' AND PART = '{1}' AND REV = '{2}'", V.Local.sCustomer.Trim, V.Local.sPart.Trim, V.Local.sRev.Trim, V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSQL, V.Local.fFabCost)
+	F.Intrinsic.Control.If(v.Local.fFabCost,<>,0)
+		Gui.f_RouterBaseCost.txtFabCost.Text(v.Local.fFabCost)
+		Gui.f_RouterBaseCost.cmdSave.SetFocus(True)
+	F.Intrinsic.Control.Else
+		Gui.f_RouterBaseCost.txtFabCost.Text("")
+	F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ElseIf(V.Local.sFullPart.Trim,=,"")
+	F.Intrinsic.UI.Msgbox("You must select a Part before you can continue!","Required Field")
+	F.Intrinsic.Control.CallSub(f_Main_UnLoad)
+F.Intrinsic.Control.EndIf
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6791", "ProjectTitle", "Metal Surcharges ", "Callback", "f_Main_UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.LoadRouterBaseCost.End
+
+Program.Sub.cmdCancel_Click.Start
+F.Intrinsic.Control.Try
+V.Local.iRet.Declare(Long)
+
+'prompt the user with a message asking if they'd like to save the records. 
+F.Intrinsic.UI.Msgbox("Are you sure you want to cancel?", "Warning", 4, V.Local.iRet)
+F.Intrinsic.Control.If(V.Local.iRet,=,6)
+'if they say yes, call unload sub
+	F.Intrinsic.Control.CallSub(f_Main_Unload)
+F.Intrinsic.Control.ElseIf(V.Local.iRet,=,7)
+'if they say no, exit sub
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6791", "ProjectTitle", "Metal Surcharges ", "Callback", "f_Main_UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdCancel_Click.End
+
+Program.Sub.cmdRouterSave_Click.Start
+F.Intrinsic.Control.Try
+V.Local.sCust.Declare(String)
+V.Local.sCustomerPart.Declare(String)
+V.Local.sMetalContent.Declare(String)
+V.Local.fBaseCost.Declare(Float)
+V.Local.sPart.Declare(String)
+V.Local.sRev.Declare(String)
+V.Local.sCallingScreen.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sBaseCost.Declare(String)
+V.Local.sFabCost.Declare(String)
+V.Local.fFabCost.Declare(Float)
+
+V.Local.sCallingScreen.Set("RL")
+
+'get screen data
+V.Local.sCust.Set(V.Screen.f_RouterBaseCost!txtCust.Text)
+V.Local.sPart.Set(V.Screen.f_RouterBaseCost!txtPart.Text)
+V.Local.sRev.Set(V.Screen.f_RouterBaseCost!txtRev.Text)
+V.Local.sMetalContent.Set(V.Screen.f_RouterBaseCost!txtMetCont.Text)
+V.Local.sBaseCost.Set(V.Screen.f_RouterBaseCost!txtBasecost.Text)
+F.Intrinsic.String.Replace(V.Local.sBaseCost, "$", "", V.Local.sBaseCost)
+V.Local.fBaseCost.Set(V.Local.sBaseCost.Float)
+F.Intrinsic.Math.Round(V.Local.fBaseCost, 4, V.Local.fBaseCost)
+V.Local.sFabCost.Set(V.Screen.f_RouterBaseCost!txtFabCost.Text)
+F.Intrinsic.String.Replace(V.Local.sFabCost, "$", "", V.Local.sFabCost)
+V.Local.fFabCost.Set(V.Local.sFabCost.Float)
+F.Intrinsic.Math.Round(V.Local.fFabCost, 4, V.Local.fFabCost)
+
+'check to see if a record exists for the customer
+F.Intrinsic.String.Build("SELECT * FROM GCG_6791_BASE_COST WHERE CUSTOMER = '{0}' AND PART = '{1}' AND REV = '{2}'", V.Local.sCust.Trim, V.Local.sPart.Trim, V.Local.sRev.Trim, V.Local.sSQL)
+F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"")
+	'update the record
+	F.Intrinsic.String.Build("UPDATE GCG_6791_BASE_COST SET BASE_COST = '{0}', FAB_COST = '{1}' WHERE CUSTOMER = '{2}' AND PART = '{3}' AND REV = '{4}'", V.Local.fBaseCost, v.Local.fFabCost, V.Local.sCust.Trim, V.Local.sPart.Trim, V.Local.sRev.Trim, V.Local.sSQL)
+	F.ODBC.Connection!con.Execute(V.Local.sSQL)
+
+F.Intrinsic.Control.ElseIf(V.Local.sRet.Trim,=,"")
+	'insert the record
+	F.Intrinsic.String.Build("INSERT INTO GCG_6791_BASE_COST (CUSTOMER, PART, REV, METAL_CONTENT, BASE_COST, FAB_COST) VALUES ( '{0}','{1}', '{2}', '{3}', '{4}', '{5}')", V.Local.sCust.Trim, v.Local.sPart.Trim, V.Local.sRev.Trim, V.Local.sMetalContent.Trim, v.Local.fBaseCost, V.Local.fFabCost, V.Local.sSQL)
+	F.ODBC.Connection!con.Execute(V.Local.sSQL)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.UI.Msgbox("Base Cost and Fab Cost Saved!", "Save Successful")
+F.Intrinsic.Control.CallSub(f_Main_UnLoad)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6791", "ProjectTitle", "Metal Surcharges ", "Callback", "f_Main_UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdRouterSave_Click.End
+
+Program.Sub.f_RouterBaseCost_UnLoad.Start
+F.Intrinsic.Control.Try
+V.Local.iRet.Declare(Long)
+
+'prompt the user with a message asking if they'd like to save the records. 
+F.Intrinsic.UI.Msgbox("Are you sure you want to cancel?", "Warning", 4, V.Local.iRet)
+F.Intrinsic.Control.If(V.Local.iRet,=,6)
+'if they say yes, call unload sub
+	F.Intrinsic.Control.CallSub(f_Main_Unload)
+F.Intrinsic.Control.ElseIf(V.Local.iRet,=,7)
+'if they say no, exit sub
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6791", "ProjectTitle", "Metal Surcharges ", "Callback", "f_Main_UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.f_RouterBaseCost_UnLoad.End
+
+Program.Sub.RterLinePreSave.Start
+F.Intrinsic.Control.Try
+V.Local.fBaseCost.Declare(Float)
+V.Local.sRouterLine.Declare(String)
+V.Local.sRouterNo.Declare(String)
+V.Local.sPart.Declare(String)
+V.Local.sCust.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sRev.Declare(String)
+
+V.Local.sRouterNo.Set(V.Passed.ROUTER-NUM.Trim)
+V.Local.sRouterLine.Set(V.Passed.RENUM-SEQ)
+V.Local.sPart.Set(V.Passed.000112)
+F.Intrinsic.String.RPad(V.Local.sPart, " ", 12, V.Local.sPart)
+F.Intrinsic.String.Right(v.Local.sPart, 3, V.Local.sRev)
+F.Intrinsic.String.Left(V.Local.sPart,17, V.Local.sPart)
+
+'query router header to get the customer
+F.Intrinsic.String.Build("SELECT CUSTOMER FROM V_ROUTER_HEADER WHERE ROUTER = '{0}'", V.Local.sRouterNo, V.Local.sSQL)
+F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sCust)
+F.Intrinsic.Control.If(V.Local.sCust.Trim,<>,"")
+	'query custom table to get the base cost
+	F.Intrinsic.String.Build("SELECT BASE_COST FROM GCG_6791_BASE_COST WHERE CUSTOMER = '{0}' AND PART = '{1}' AND REV = '{2}'", V.Local.sCust.Trim, V.Local.sPart, V.Local.sRev, V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.fBaseCost)
+	F.Intrinsic.Control.If(V.Local.fBaseCost.String,<>,"0")
+		'set the passed variable for the rate
+		V.Passed.000120.Set(V.Local.fBaseCost)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6791", "ProjectTitle", "Metal Surcharges ", "Callback", "f_Main_UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.RterLinePreSave.End
+
+Program.Sub.RterLinePostSave.Start
+F.Intrinsic.Control.Try
+V.Local.sType.Declare(String)
+V.Local.fFabCost.Declare(Float)
+V.Local.fRunTime.Declare(Float)
+V.Local.iLeadTime.Declare(Long)
+V.Local.sRouterLine.Declare(String)
+V.Local.sRouterNo.Declare(String)
+V.Local.sPart.Declare(String)
+V.Local.sCust.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sRev.Declare(String)
+V.Local.sUM.Declare(String)
+V.Local.sFPartNo.Declare(String)
+V.Local.sCurrRtrLine.Declare(String)
+V.Local.sSeqJump.Declare(String)
+V.Local.iSeqJump.Declare(Long)
+V.Local.iRtrLine.Declare(Long)
+V.Local.sDesc.Declare(String)
+V.Local.iLen.Declare(Long)
+
+
+V.Local.sType.Set("M")
+V.Local.sRouterNo.Set(V.Passed.ROUTER-NUM)
+V.Local.sPart.Set(V.Passed.000112)
+F.Intrinsic.String.RPad(V.Local.sPart, " ", 20, V.Local.sPart)
+F.Intrinsic.String.Right(V.Local.sPart, 3, V.Local.sRev)
+F.Intrinsic.String.Left(V.Local.sPart, 15, V.Local.sPart)
+F.Intrinsic.String.Build("{0}-F{1}", V.Local.sPart.Trim, V.Local.sRev, V.Local.sFPartNo)
+F.Intrinsic.String.RPad(V.Local.sFPartNo, " ",20, V.Local.sFPartNo)
+V.Local.sDesc.Set(V.Passed.000121.Trim)
+F.Intrinsic.String.Len(V.Local.sDesc,V.Local.iLen)
+F.Intrinsic.Control.If(V.Local.iLen,>=,9, "AND", V.Local.iLen,<=,27)
+	F.Intrinsic.String.Build("{0}-FC", V.Local.sDesc.Trim, V.Local.sDesc)
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Build("{0}-Fab Cost", V.Local.sDesc.Trim, V.Local.sDesc)
+F.Intrinsic.Control.EndIf
+
+
+F.Intrinsic.String.Build("SELECT TOP 1 LINE_ROUTER FROM V_ROUTER_LINE WHERE ROUTER = '{0}' AND LINE_ROUTER < 900000 ORDER BY LINE_ROUTER DESC", V.Local.sRouterNo, V.Local.sSQL)
+F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sCurrRtrLine)
+
+F.ODBC.Connection!con.ExecuteAndReturn("SELECT F_LONG FROM V_OP_HEADER WHERE ID = 401113", V.Local.iSeqJump)
+F.Intrinsic.Control.If(V.Local.iSeqJump.String,<>,"")
+	'add the sequence jump to the current router line
+	F.Intrinsic.Math.Add(V.Local.sCurrRtrLine.Long, V.Local.iSeqJump, V.Local.iRtrLine)
+	V.Local.sRouterLine.Set(V.Local.iRtrLine.String)
+	F.Intrinsic.String.LPad(V.Local.sRouterLine, "0", 6,V.Local.sRouterLine)
+F.Intrinsic.Control.EndIf
+
+V.Local.sUM.Set(V.Passed.000119.Trim)
+V.Local.fRunTime.Set(V.Passed.000118.Float)
+V.Local.iLeadTime.Set(V.Passed.000153)
+
+'query router header to get the customer
+F.Intrinsic.String.Build("SELECT CUSTOMER FROM V_ROUTER_HEADER WHERE ROUTER = '{0}'", V.Local.sRouterNo, V.Local.sSQL)
+F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sCust)
+F.Intrinsic.Control.If(V.Local.sCust.Trim,<>,"")
+	'query custom table to get the base cost
+	F.Intrinsic.String.Build("SELECT FAB_COST FROM GCG_6791_BASE_COST WHERE CUSTOMER = '{0}' AND PART = '{1}' AND REV = '{2}'", V.Local.sCust.Trim, V.Local.sPart, V.Local.sRev, V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.fFabCost)
+	F.Intrinsic.Control.If(V.Local.fFabCost.String,<>,"0")
+		'add new material line to the router for the fabrication cost part that corresponds to the raw material part selected. Will have -F as a prefix
+		F.Data.DataTable.AddRow("6021", "RouterNum", V.Local.sRouterNo, "Seq", V.Local.sRouterLine, "LineType", V.Local.sType.Trim, "PartNum", V.Local.sFPartNo, "UM", V.Local.sUM.Trim, "RunTimeMatlQty", V.Local.fRunTime, "RateUC", V.Local.fFabCost, "LeadTime", V.Local.iLeadTime, "PartStepDesc", V.Local.sDesc.Trim)
+		
+		F.Intrinsic.Control.CallSub(6021Sync)
+		
+		v.Passed.REFRESH.Set(1)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6791", "ProjectTitle", "Metal Surcharges ", "Callback", "f_Main_UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.RterLinePostSave.End
+
+Program.Sub.LoadQuoteBaseCost.Start
+F.Intrinsic.Control.Try
+V.Local.fBaseCost.Declare(Float)
+V.Local.sCust.Declare(String)
+V.Local.sPart.Declare(String)
+V.Local.sRev.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sFullPart.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sMetalContent.Declare(String)
+V.Local.sDescription.Declare(String)
+
+V.Local.sCust.Set(V.Passed.000112.Trim)
+V.Local.sPart.Set(V.Passed.000052)
+F.Intrinsic.String.RPad(V.Local.sPart, " ", 17, V.Local.sPart)
+V.Local.sRev.Set(V.Passed.000053)
+F.Intrinsic.String.RPad(V.Local.sRev, " ", 3, V.Local.sRev)
+F.Intrinsic.String.Build("{0}{1}", V.Local.sPart, V.Local.sRev, V.Local.sFullPart)
+
+'check to see that the part field is populated
+F.Intrinsic.Control.If(V.Local.sPart.Trim,<>,"")
+
+	Gui.f_QteBaseCost.txtCust.Text(V.Local.sCust.Trim)
+	'query customer master to get the customer name
+	F.Intrinsic.String.Build("SELECT NAME_CUSTOMER FROM V_CUSTOMER_MASTER WHERE CUSTOMER = '{0}'", V.Local.sCust.Trim, V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSQL, V.Local.sRet)
+	f.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"")
+		Gui.f_QteBaseCost.txtCustName.Text(V.Local.sRet.Trim)
+	f.Intrinsic.Control.EndIf
+	
+	Gui.f_QteBaseCost.txtPart.Text(v.Local.sPart)
+	Gui.f_QteBaseCost.txtRev.Text(V.Local.sRev)
+
+	'query info 1 on inventory master to get metal content
+	'query inventory xref to get the customer part number
+	F.Intrinsic.String.Build("SELECT TEXT_INFO1, DESCRIPTION FROM V_INVENTORY_ALL WHERE PART = '{0}'", v.Local.sFullPart, V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"")
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+		V.Local.sMetalContent.Set(V.Local.sRet(0).Trim)
+		Gui.f_QteBaseCost.txtMetContent.Text(V.Local.sMetalContent.Trim)
+		V.Local.sDescription.Set(V.Local.sRet(1).Trim)
+		F.Intrinsic.Control.If(V.Local.sDescription.Trim,<>,"")
+			Gui.f_QteBaseCost.txtDesc.Text(V.Local.sDescription.Trim)
+		F.Intrinsic.Control.Else
+			V.Local.sDescription.Set(V.Passed.000056)
+			Gui.f_QteBaseCost.txtDesc.Text(V.Local.sDescription.Trim)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		V.Local.sDescription.Set(V.Passed.000056)
+		F.Intrinsic.Control.If(V.Local.sDescription.Trim,<>,"")
+			Gui.f_QteBaseCost.txtDesc.Text(V.Local.sDescription.Trim)
+		f.Intrinsic.Control.Else
+			Gui.f_QteBaseCost.txtDesc.Text("")
+		
+		F.Intrinsic.Control.EndIf
+		Gui.f_QteBaseCost.txtMetContent.Text("")
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.String.Build("SELECT CUSTOMER_PART FROM V_INV_CROSS_REF WHERE PART = '{0}' AND CUSTOMER = '{1}'", v.Local.sFullPart, V.Local.sCust.Trim, V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"")
+		Gui.f_QteBaseCost.txtCustPart.Text(V.Local.sRet.Trim)
+	F.Intrinsic.Control.Else
+		V.Local.sRet.Set(V.Passed.000058.Trim)
+		F.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"")
+			Gui.f_QteBaseCost.txtCustPart.Text(V.Local.sRet.Trim)
+		F.Intrinsic.Control.Else
+		
+			Gui.f_QteBaseCost.txtCustPart.Text("")
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	'query custom table to get the base cost if it has already been entered
+	F.Intrinsic.String.Build("SELECT BASE_COST FROM GCG_6791_BASE_COST WHERE CUSTOMER = '{0}' AND PART = '{1}' AND REV = '{2}'", V.Local.sCust.Trim, V.Local.sPart.Trim, V.Local.sRev.Trim, V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSQL, V.Local.fBaseCost)
+	F.Intrinsic.Control.If(v.Local.fBaseCost,<>,0)
+		Gui.f_QteBaseCost.txtBaseCost.Text(v.Local.fBaseCost)
+		Gui.f_QteBaseCost.cmdSave.SetFocus(True)
+	F.Intrinsic.Control.Else
+		Gui.f_QteBaseCost.txtBaseCost.Text("")
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Else
+	'if not, end
+	F.Intrinsic.UI.Msgbox("You must select a Part before you can continue!", "Required Field")
+	F.Intrinsic.Control.CallSub(f_Main_UnLoad)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6791", "ProjectTitle", "Metal Surcharges ", "Callback", "f_Main_UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.LoadQuoteBaseCost.End
+
+Program.Sub.cmdQteSave.Start
+F.Intrinsic.Control.Try
+V.Local.sCust.Declare(String)
+V.Local.sCustomerPart.Declare(String)
+V.Local.sMetalContent.Declare(String)
+V.Local.fBaseCost.Declare(Float)
+V.Local.sPart.Declare(String)
+V.Local.sRev.Declare(String)
+V.Local.sCallingScreen.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sBaseCost.Declare(String)
+V.Local.sFabCost.Declare(String)
+V.Local.fFabCost.Declare(Float)
+
+V.Local.sCallingScreen.Set("QL")
+
+'get screen data
+V.Local.sCust.Set(V.Screen.f_QteBaseCost!txtCust.Text)
+V.Local.sPart.Set(V.Screen.f_QteBaseCost!txtPart.Text)
+V.Local.sRev.Set(V.Screen.f_QteBaseCost!txtRev.Text)
+V.Local.sMetalContent.Set(V.Screen.f_QteBaseCost!txtMetContent.Text)
+V.Local.sBaseCost.Set(V.Screen.f_QteBaseCost!txtBaseCost.Text)
+F.Intrinsic.String.Replace(V.Local.sBaseCost, "$", "", V.Local.sBaseCost)
+V.Local.fBaseCost.Set(V.Local.sBaseCost.Float)
+F.Intrinsic.Math.Round(V.Local.fBaseCost, 4, V.Local.fBaseCost)
+
+'check to see if a record exists for the customer
+F.Intrinsic.String.Build("SELECT * FROM GCG_6791_BASE_COST WHERE CUSTOMER = '{0}' AND PART = '{1}' AND REV = '{2}'", V.Local.sCust.Trim, V.Local.sPart.Trim, V.Local.sRev.Trim, V.Local.sSQL)
+F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"")
+	'update the record
+	F.Intrinsic.String.Build("UPDATE GCG_6791_BASE_COST SET BASE_COST = '{0}' WHERE CUSTOMER = '{1}' AND PART = '{2}' AND REV = '{3}'", V.Local.fBaseCost, V.Local.sCust.Trim, V.Local.sPart.Trim, V.Local.sRev.Trim, V.Local.sSQL)
+	F.ODBC.Connection!con.Execute(V.Local.sSQL)
+
+F.Intrinsic.Control.ElseIf(V.Local.sRet.Trim,=,"")
+	'insert the record
+	F.Intrinsic.String.Build("INSERT INTO GCG_6791_BASE_COST ( CUSTOMER, PART, REV, METAL_CONTENT, BASE_COST) VALUES ( '{0}','{1}', '{2}', '{3}', '{4}')", V.Local.sCust.Trim, v.Local.sPart.Trim, V.Local.sRev.Trim, V.Local.sMetalContent.Trim, v.Local.fBaseCost, V.Local.sSQL)
+	F.ODBC.Connection!con.Execute(V.Local.sSQL)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.UI.Msgbox("Base Cost Saved!", "Save Successful")
+F.Intrinsic.Control.CallSub(f_Main_UnLoad)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6791", "ProjectTitle", "Metal Surcharges ", "Callback", "f_Main_UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdQteSave.End
+
+Program.Sub.f_QteBaseCost_UnLoad.Start
+F.Intrinsic.Control.Try
+V.Local.iRet.Declare(Long)
+
+'prompt the user with a message asking if they'd like to save the records. 
+F.Intrinsic.UI.Msgbox("Are you sure you want to cancel?", "Warning", 4, V.Local.iRet)
+F.Intrinsic.Control.If(V.Local.iRet,=,6)
+'if they say yes, call unload sub
+	F.Intrinsic.Control.CallSub(f_Main_Unload)
+F.Intrinsic.Control.ElseIf(V.Local.iRet,=,7)
+'if they say no, exit sub
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6791", "ProjectTitle", "Metal Surcharges ", "Callback", "f_Main_UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.f_QteBaseCost_UnLoad.End
+
+Program.Sub.LoadInvBaseCost.Start
+F.Intrinsic.Control.Try
+V.Local.fBaseCost.Declare(Float)
+V.Local.fFabCost.Declare(Float)
+V.Local.sPart.Declare(String)
+V.Local.sRev.Declare(String)
+V.Local.sCust.Declare(String)
+V.Local.sMetalContent.Declare(String)
+V.Local.sCustPart.Declare(String)
+V.Local.sFullPart.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sCustomer.Declare(String)
+V.Local.sDescription.Declare(String)
+
+V.Local.sPart.Set(V.Passed.000007)
+V.Local.sRev.Set(V.Passed.000008)
+
+'check to make sure a part has been entered
+F.Intrinsic.Control.If(V.Local.sPart.Trim,<>,"")
+	Gui.f_InvBaseCost.txtPart.Text(V.Local.sPart)
+	Gui.f_InvBaseCost.txtRev.Text(V.Local.sRev)
+	Gui.f_InvBaseCost.txtDesc.Text(V.Passed.000012.Trim)
+	Gui.f_InvBaseCost.txtMetContent.Text(V.Passed.000027.Trim)
+
+	F.Intrinsic.String.Build("SELECT BASE_COST, FAB_COST FROM GCG_6791_BASE_COST WHERE PART = '{0}' AND REV = '{1}' AND CUSTOMER = ''", V.Local.sPart, V.Local.sRev, V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"")
+		F.Intrinsic.String.Split(V.Local.sRet, "*!*", V.Local.sRet)
+		Gui.f_InvBaseCost.txtBaseCost.Text(V.Local.sRet(0).Float)
+		Gui.f_InvBaseCost.txtFabCost.Text(V.Local.sRet(1).Float)
+	F.Intrinsic.Control.Else
+		Gui.f_InvBaseCost.txtBaseCost.Text(0)
+		Gui.f_InvBaseCost.txtFabCost.Text(0)
+	F.Intrinsic.Control.EndIf
+	'check to see if the part is RM or not
+	'if it's not RM, hide the fab cost text box
+'	F.Intrinsic.Control.If(V.Passed.000011.Trim,<>, "01")
+'		Gui.f_InvBaseCost.txtFabCost.Text(0)
+'		Gui.f_InvBaseCost.txtFabCost.Visible(False)
+'		Gui.f_InvBaseCost.lblFabCost.Visible(False)
+		
+'	F.Intrinsic.Control.Elseif(V.Passed.000011.Trim,=,"01")
+		Gui.f_InvBaseCost.txtFabCost.Visible(True)
+		Gui.f_InvBaseCost.lblFabCost.Visible(True)
+
+'	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Else
+	F.Intrinsic.UI.Msgbox("You must select a Part before you can continue!", "Required Field")
+	F.Intrinsic.Control.CallSub(f_Main_UnLoad)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6791", "ProjectTitle", "Metal Surcharges ", "Callback", "f_Main_UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.LoadInvBaseCost.End
+
+Program.Sub.txtCustName_KeyPressEnter.Start
+F.Intrinsic.Control.Try
+V.Local.fBaseCost.Declare(Float)
+V.Local.fFabCost.Declare(Float)
+V.Local.sCust.Declare(String)
+V.Local.sCustName.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sPart.Declare(String)
+V.Local.sRev.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sFullPart.Declare(String)
+
+F.Intrinsic.Control.BlockEvents
+V.Local.fFabCost.Set(V.Screen.f_InvBaseCost!txtFabCost.Text)
+V.Local.fBaseCost.Set(V.Screen.f_InvBaseCost!txtBaseCost.Text)
+
+V.Local.sCustName.Set(V.Screen.f_InvBaseCost!txtCustName.Text)
+F.Intrinsic.Control.If(V.Local.sCustName.Trim,<>,"")
+'	Gui.f_InvBaseCost.txtBaseCost.Text("")
+'	Gui.f_InvBaseCost.txtFabCost.Text("")
+	'query customer master to get the customer name
+	F.Intrinsic.String.Build("SELECT CUSTOMER FROM V_CUSTOMER_MASTER WHERE NAME_CUSTOMER = '{0}'", V.Local.sCustName.Trim, V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSQL, V.Local.sCust)
+	f.Intrinsic.Control.If(V.Local.sCust.Trim,<>,"")
+		Gui.f_InvBaseCost.txtCust.Text(V.Local.sCust.Trim)
+		
+		V.Local.sPart.Set(V.Screen.f_InvBaseCost!txtPart.Text)
+		V.Local.sRev.Set(v.Screen.f_InvBaseCost!txtRev.Text)
+
+		F.Intrinsic.String.RPad(V.Local.sPart, " ", 17, V.Local.sPart)
+		F.Intrinsic.String.RPad(V.Local.sRev, " ", 3, V.Local.sRev)
+	
+		F.Intrinsic.String.Build("{0}{1}", V.Local.sPart, V.Local.sRev, V.Local.sFullPart)
+
+		
+		F.Intrinsic.String.Build("SELECT CUSTOMER_PART FROM V_INV_CROSS_REF WHERE PART = '{0}' AND CUSTOMER = '{1}'", v.Local.sFullPart, V.Local.sCust.Trim,V.Local.sSQL)
+		F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"")
+			Gui.f_InvBaseCost.txtCustPart.Text(V.Local.sRet.Trim)
+		F.Intrinsic.Control.Else
+			Gui.f_InvBaseCost.txtCustPart.Text("")
+		F.Intrinsic.Control.EndIf
+		
+		'query custom table to get the base cost if it has already been entered
+		F.Intrinsic.String.Build("SELECT BASE_COST FROM GCG_6791_BASE_COST WHERE  CUSTOMER = '{0}' AND PART = '{1}' AND REV = '{2}'", V.Local.sCust.Trim, V.Local.sPart.Trim, V.Local.sRev.Trim, V.Local.sSQL)
+		F.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSQL, V.Local.fBaseCost)
+		F.Intrinsic.Control.If(v.Local.fBaseCost,<>,0)
+			Gui.f_InvBaseCost.txtBaseCost.Text(v.Local.fBaseCost)
+			Gui.f_InvBaseCost.cmdSave.SetFocus(True)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("SELECT BASE_COST FROM GCG_6791_BASE_COST WHERE PART = '{0}' AND REV = '{1}' AND CUSTOMER = ''", V.Local.sPart.Trim, V.Local.sRev.Trim, V.Local.sSQL)
+			F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+			F.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"")
+				Gui.f_InvBaseCost.txtBaseCost.Text(V.Local.sRet(0).Float)
+			F.Intrinsic.Control.Else
+				Gui.f_InvBaseCost.txtBaseCost.Text(0)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+		
+		F.Intrinsic.String.Build("SELECT FAB_COST FROM GCG_6791_BASE_COST WHERE  CUSTOMER = '{0}' AND PART = '{1}' AND REV = '{2}'", V.Local.sCust.Trim, V.Local.sPart.Trim, V.Local.sRev.Trim, V.Local.sSQL)
+		F.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSQL, V.Local.fFabCost)
+		F.Intrinsic.Control.If(v.Local.fFabCost,<>,0)
+			Gui.f_InvBaseCost.txtFabCost.Text(v.Local.fFabCost)
+			Gui.f_InvBaseCost.cmdSave.SetFocus(True)
+			
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("SELECT FAB_COST FROM GCG_6791_BASE_COST WHERE PART = '{0}' AND REV = '{1}' AND CUSTOMER = ''", V.Local.sPart.Trim, V.Local.sRev.Trim, V.Local.sSQL)
+			F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+			F.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"")
+				Gui.f_InvBaseCost.txtFabCost.Text(V.Local.sRet(0).Float)
+			F.Intrinsic.Control.Else
+				Gui.f_InvBaseCost.txtFabCost.Text(0)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else
+	F.Intrinsic.UI.Msgbox("You must select a Customer before you can continue!", "Required Field")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.UnBlockEvents
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6791", "ProjectTitle", "Metal Surcharges ", "Callback", "f_Main_UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.txtCustName_KeyPressEnter.End
+
+Program.Sub.txtCust_KeyPressEnter.Start
+F.Intrinsic.Control.Try
+V.Local.fBaseCost.Declare(Float)
+V.Local.fFabCost.Declare(Float)
+V.Local.sCust.Declare(String)
+V.Local.sCustName.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sPart.Declare(String)
+V.Local.sRev.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sFullPart.Declare(String)
+
+F.Intrinsic.Control.BlockEvents
+
+V.Local.fFabCost.Set(V.Screen.f_InvBaseCost!txtFabCost.Text)
+V.Local.fBaseCost.Set(V.Screen.f_InvBaseCost!txtBaseCost.Text)
+
+V.Local.sCust.Set(V.Screen.f_InvBaseCost!txtCust.Text)
+F.Intrinsic.Control.If(V.Local.sCust.Trim,<>,"")
+
+'	Gui.f_InvBaseCost.txtBaseCost.Text("")
+'	Gui.f_InvBaseCost.txtFabCost.Text("")
+	'query customer master to get the customer name
+	F.Intrinsic.String.Build("SELECT NAME_CUSTOMER FROM V_CUSTOMER_MASTER WHERE CUSTOMER = '{0}'", V.Local.sCust.Trim, V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSQL, V.Local.sCustName)
+	f.Intrinsic.Control.If(V.Local.sCustName.Trim,<>,"")
+		Gui.f_InvBaseCost.txtCustName.Text(V.Local.sCustName.Trim)
+		
+		V.Local.sPart.Set(V.Screen.f_InvBaseCost!txtPart.Text)
+		V.Local.sRev.Set(v.Screen.f_InvBaseCost!txtRev.Text)
+
+		F.Intrinsic.String.RPad(V.Local.sPart, " ", 17, V.Local.sPart)
+		F.Intrinsic.String.RPad(V.Local.sRev, " ", 3, V.Local.sRev)
+	
+		F.Intrinsic.String.Build("{0}{1}", V.Local.sPart, V.Local.sRev, V.Local.sFullPart)
+		
+		'query customer master to get the customer name
+		F.Intrinsic.String.Build("SELECT NAME_CUSTOMER FROM V_CUSTOMER_MASTER WHERE CUSTOMER = '{0}'", V.Local.sCust.Trim, V.Local.sSQL)
+		F.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSQL, V.Local.sRet)
+		f.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"")
+			Gui.f_InvBaseCost.txtCustName.Text(V.Local.sRet.Trim)
+		f.Intrinsic.Control.EndIf
+		
+		F.Intrinsic.String.Build("SELECT CUSTOMER_PART FROM V_INV_CROSS_REF WHERE PART = '{0}' AND CUSTOMER = '{1}'", v.Local.sFullPart, V.Local.sCust.Trim,V.Local.sSQL)
+		F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"")
+			Gui.f_InvBaseCost.txtCustPart.Text(V.Local.sRet.Trim)
+		F.Intrinsic.Control.Else
+			Gui.f_InvBaseCost.txtCustPart.Text("")
+		F.Intrinsic.Control.EndIf
+		
+		'query custom table to get the base cost if it has already been entered
+		F.Intrinsic.String.Build("SELECT BASE_COST FROM GCG_6791_BASE_COST WHERE  CUSTOMER = '{0}' AND PART = '{1}' AND REV = '{2}'", V.Local.sCust.Trim, V.Local.sPart.Trim, V.Local.sRev.Trim, V.Local.sSQL)
+		F.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSQL, V.Local.fBaseCost)
+		F.Intrinsic.Control.If(v.Local.fBaseCost,<>,0)
+			Gui.f_InvBaseCost.txtBaseCost.Text(v.Local.fBaseCost)
+			Gui.f_InvBaseCost.cmdSave.SetFocus(True)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("SELECT BASE_COST FROM GCG_6791_BASE_COST WHERE PART = '{0}' AND REV = '{1}' AND CUSTOMER = ''", V.Local.sPart.Trim, V.Local.sRev.Trim, V.Local.sSQL)
+			F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+			F.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"")
+				Gui.f_InvBaseCost.txtBaseCost.Text(V.Local.sRet(0).Float)
+			F.Intrinsic.Control.Else
+				Gui.f_InvBaseCost.txtBaseCost.Text(0)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+		
+		F.Intrinsic.String.Build("SELECT FAB_COST FROM GCG_6791_BASE_COST WHERE  CUSTOMER = '{0}' AND PART = '{1}' AND REV = '{2}'", V.Local.sCust.Trim, V.Local.sPart.Trim, V.Local.sRev.Trim, V.Local.sSQL)
+		F.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSQL, V.Local.fFabCost)
+		F.Intrinsic.Control.If(v.Local.fFabCost,<>,0)
+			Gui.f_InvBaseCost.txtFabCost.Text(v.Local.fFabCost)
+			Gui.f_InvBaseCost.cmdSave.SetFocus(True)
+			
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("SELECT FAB_COST FROM GCG_6791_BASE_COST WHERE PART = '{0}' AND REV = '{1}' AND CUSTOMER = ''", V.Local.sPart.Trim, V.Local.sRev.Trim, V.Local.sSQL)
+			F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+			F.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"")
+				Gui.f_InvBaseCost.txtFabCost.Text(V.Local.sRet(0).Float)
+			F.Intrinsic.Control.Else
+				Gui.f_InvBaseCost.txtFabCost.Text(0)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else
+	F.Intrinsic.UI.Msgbox("You must select a Customer before you can continue!", "Required Field")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.UnBlockEvents
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6791", "ProjectTitle", "Metal Surcharges ", "Callback", "f_Main_UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.txtCust_KeyPressEnter.End
+
+Program.Sub.cmdCustBrw_Click.Start
+F.Intrinsic.Control.Try
+V.Local.iWidths.Declare(Long)
+V.Local.fBaseCost.Declare(Float)
+V.Local.fFabCost.Declare(Float)
+V.Local.sCust.Declare(String)
+V.Local.sCustName.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sPart.Declare(String)
+V.Local.sRev.Declare(String)
+V.Local.sFullPart.Declare(String)
+V.Local.sTitles.Declare(String)
+V.Local.sFilter.Declare(String)
+
+Function.Intrinsic.String.Split("Cuustomer Name*!*Customer*!*City*!*State*!*Zip*!*Telephone","*!*",variable.local.sTitles)
+Function.Intrinsic.String.Split("2500*!*900*!*1500*!*750*!*1000*!*1250","*!*",variable.local.iWidths)
+
+'check to see if they have entered a customer name
+F.Intrinsic.Control.If(V.Screen.f_InvBaseCost!txtCustName.Text,<>,"", "AND",V.Screen.f_InvBaseCost!txtCust.Text,=,"")
+	V.Local.sCustName.Set(V.Screen.f_InvBaseCost!txtCustName.Text)
+	F.Intrinsic.String.Build("SELECT NAME_CUSTOMER, CUSTOMER, CITY, STATE,ZIP, TELEPHONE FROM V_CUSTOMER_MASTER WHERE NAME_CUSTOMER LIKE '%{0}%'", V.Local.sCustName.Trim, V.Local.sFilter)
+
+F.Intrinsic.Control.ElseIf(V.Screen.f_InvBaseCost!txtCust.Text,<>,"", "AND", V.Screen.f_InvBaseCost!txtCustName.Text,=,"")
+	V.Local.sCust.set(V.Screen.f_InvBaseCost!txtCust.Text)
+	F.Intrinsic.String.Build("SELECT NAME_CUSTOMER, CUSTOMER, CITY, STATE,ZIP, TELEPHONE FROM V_CUSTOMER_MASTER WHERE CUSTOMER = '{0}'", V.Local.sCust.Trim, V.Local.sFilter)
+	
+F.Intrinsic.Control.ElseIf(V.Screen.f_InvBaseCost!txtCust.Text,=,"", "AND", V.Screen.f_InvBaseCost!txtCustName.Text,=,"")
+	V.Local.sFilter.Set("SELECT NAME_CUSTOMER, CUSTOMER, CITY, STATE,ZIP, TELEPHONE FROM V_CUSTOMER_MASTER")
+F.Intrinsic.Control.ElseIf(V.Screen.f_InvBaseCost!txtCust.Text,<>,"", "AND", V.Screen.f_InvBaseCost!txtCustName.Text,<>,"")
+	V.Local.sCustName.Set(V.Screen.f_InvBaseCost!txtCustName.Text)
+	V.Local.sCust.set(V.Screen.f_InvBaseCost!txtCust.Text)
+	F.Intrinsic.String.Build("SELECT NAME_CUSTOMER, CUSTOMER, CITY, STATE,ZIP, TELEPHONE FROM V_CUSTOMER_MASTER WHERE NAME_CUSTOMER LIKE '%{0}%' AND CUSTOMER = '{1}'", V.Local.sCustName.Trim, V.Local.sCust.Trim,V.Local.sFilter)
+
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.UI.Browser("Select a Customer", "con", V.Local.sFilter, V.Local.sTitles, V.Local.iWidths, V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet, "*!*", V.Local.sRet)
+	V.Local.sCust.Set(V.Local.sRet(1).Trim)
+	V.Local.sCustName.Set(V.Local.sRet(0).Trim)
+	
+	Gui.f_InvBaseCost.txtCust.Text(V.Local.sCust.Trim)
+	Gui.f_InvBaseCost.txtCustName.Text(V.Local.sCustName.Trim)
+	
+	V.Local.fBaseCost.Set(V.Screen.f_InvBaseCost!txtBaseCost.Text)
+	V.Local.fFabCost.Set(V.Screen.f_InvBaseCost!txtFabCost.Text)
+	
+	V.Local.sPart.Set(V.Screen.f_InvBaseCost!txtPart.Text)
+	V.Local.sRev.Set(v.Screen.f_InvBaseCost!txtRev.Text)
+
+	F.Intrinsic.String.RPad(V.Local.sPart, " ", 17, V.Local.sPart)
+	F.Intrinsic.String.RPad(V.Local.sRev, " ", 3, V.Local.sRev)
+
+	F.Intrinsic.String.Build("{0}{1}", V.Local.sPart, V.Local.sRev, V.Local.sFullPart)
+		
+	'query customer master to get the customer name
+	F.Intrinsic.String.Build("SELECT NAME_CUSTOMER FROM V_CUSTOMER_MASTER WHERE CUSTOMER = '{0}'", V.Local.sCust.Trim, V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSQL, V.Local.sRet)
+	f.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"")
+		Gui.f_InvBaseCost.txtCustName.Text(V.Local.sRet.Trim)
+	f.Intrinsic.Control.EndIf
+		
+	F.Intrinsic.String.Build("SELECT CUSTOMER_PART FROM V_INV_CROSS_REF WHERE PART = '{0}' AND CUSTOMER = '{1}'", v.Local.sFullPart, V.Local.sCust.Trim,V.Local.sSQL)
+		F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"")
+			Gui.f_InvBaseCost.txtCustPart.Text(V.Local.sRet.Trim)
+		F.Intrinsic.Control.Else
+			Gui.f_InvBaseCost.txtCustPart.Text("")
+		F.Intrinsic.Control.EndIf
+		
+			'query custom table to get the base cost if it has already been entered
+		F.Intrinsic.String.Build("SELECT BASE_COST FROM GCG_6791_BASE_COST WHERE  CUSTOMER = '{0}' AND PART = '{1}' AND REV = '{2}'", V.Local.sCust.Trim, V.Local.sPart.Trim, V.Local.sRev.Trim, V.Local.sSQL)
+		F.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSQL, V.Local.fBaseCost)
+		F.Intrinsic.Control.If(v.Local.fBaseCost,<>,0)
+			Gui.f_InvBaseCost.txtBaseCost.Text(v.Local.fBaseCost)
+			Gui.f_InvBaseCost.cmdSave.SetFocus(True)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("SELECT BASE_COST FROM GCG_6791_BASE_COST WHERE PART = '{0}' AND REV = '{1}' AND CUSTOMER = ''", V.Local.sPart.Trim, V.Local.sRev.Trim, V.Local.sSQL)
+			F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+			F.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"")
+				Gui.f_InvBaseCost.txtBaseCost.Text(V.Local.sRet(0).Float)
+			F.Intrinsic.Control.Else
+				Gui.f_InvBaseCost.txtBaseCost.Text(0)
+			F.Intrinsic.Control.EndIf
+	'		Gui.f_InvBaseCost.txtBaseCost.Text("")
+		F.Intrinsic.Control.EndIf
+
+		F.Intrinsic.String.Build("SELECT FAB_COST FROM GCG_6791_BASE_COST WHERE  CUSTOMER = '{0}' AND PART = '{1}' AND REV = '{2}'", V.Local.sCust.Trim, V.Local.sPart.Trim, V.Local.sRev.Trim, V.Local.sSQL)
+		F.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSQL, V.Local.fFabCost)
+		F.Intrinsic.Control.If(v.Local.fFabCost,<>,0)
+			Gui.f_InvBaseCost.txtFabCost.Text(v.Local.fFabCost)
+			Gui.f_InvBaseCost.cmdSave.SetFocus(True)
+	
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("SELECT FAB_COST FROM GCG_6791_BASE_COST WHERE PART = '{0}' AND REV = '{1}' AND CUSTOMER = ''", V.Local.sPart.Trim, V.Local.sRev.Trim, V.Local.sSQL)
+			F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+			F.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"")
+				Gui.f_InvBaseCost.txtFabCost.Text(V.Local.sRet(0).Float)
+			F.Intrinsic.Control.Else
+				Gui.f_InvBaseCost.txtFabCost.Text(0)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Else
+	F.Intrinsic.UI.Msgbox("You must select a Customer before you can continue!", "Required Field")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6791", "ProjectTitle", "Metal Surcharges ", "Callback", "f_Main_UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdCustBrw_Click.End
+
+Program.Sub.cmdInvSave_Click.Start
+F.Intrinsic.Control.Try
+V.Local.sCust.Declare(String)
+V.Local.sCustomerPart.Declare(String)
+V.Local.sMetalContent.Declare(String)
+V.Local.fBaseCost.Declare(Float)
+V.Local.sPart.Declare(String)
+V.Local.sRev.Declare(String)
+V.Local.sCallingScreen.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sBaseCost.Declare(String)
+V.Local.sFabCost.Declare(String)
+V.Local.fFabCost.Declare(Float)
+
+V.Local.sCallingScreen.Set("IM")
+
+
+'get screen data
+V.Local.sCust.Set(V.Screen.f_InvBaseCost!txtCust.Text)
+V.Local.sPart.Set(V.Screen.f_InvBaseCost!txtPart.Text)
+V.Local.sRev.Set(V.Screen.f_InvBaseCost!txtRev.Text)
+V.Local.sMetalContent.Set(V.Screen.f_InvBaseCost!txtMetContent.Text)
+V.Local.sBaseCost.Set(V.Screen.f_InvBaseCost!txtBaseCost.Text)
+F.Intrinsic.String.Replace(V.Local.sBaseCost, "$", "", V.Local.sBaseCost)
+V.Local.fBaseCost.Set(V.Local.sBaseCost.Float)
+F.Intrinsic.Math.Round(V.Local.fBaseCost, 4, V.Local.fBaseCost)
+V.Local.sFabCost.Set(V.Screen.f_InvBaseCost!txtFabCost.Text)
+F.Intrinsic.String.Replace(V.Local.sFabCost, "$", "", V.Local.sFabCost)
+V.Local.fFabCost.Set(V.Local.sFabCost.Float)
+F.Intrinsic.Math.Round(V.Local.fFabCost, 4, V.Local.fFabCost)
+
+F.Intrinsic.Control.If(V.Local.sCust.Trim,<>,"")
+	'check to see if a record exists for the customer
+	F.Intrinsic.String.Build("SELECT * FROM GCG_6791_BASE_COST WHERE CUSTOMER = '{0}' AND PART = '{1}' AND REV = '{2}'", V.Local.sCust.Trim, V.Local.sPart.Trim, V.Local.sRev.Trim, V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"")
+		'update the record
+		F.Intrinsic.String.Build("UPDATE GCG_6791_BASE_COST SET BASE_COST = '{0}', FAB_COST = '{1}' WHERE CUSTOMER = '{2}' AND PART = '{3}' AND REV = '{4}'", V.Local.fBaseCost, v.Local.fFabCost, V.Local.sCust.Trim, V.Local.sPart.Trim, V.Local.sRev.Trim, V.Local.sSQL)
+		F.ODBC.Connection!con.Execute(V.Local.sSQL)
+
+	F.Intrinsic.Control.ElseIf(V.Local.sRet.Trim,=,"")
+		'insert the record
+		F.Intrinsic.String.Build("INSERT INTO GCG_6791_BASE_COST (CUSTOMER, PART, REV, METAL_CONTENT, BASE_COST, FAB_COST) VALUES ('{0}','{1}', '{2}', '{3}', '{4}', '{5}')", V.Local.sCust.Trim, v.Local.sPart.Trim, V.Local.sRev.Trim, V.Local.sMetalContent.Trim, v.Local.fBaseCost, V.Local.fFabCost, V.Local.sSQL)
+		F.ODBC.Connection!con.Execute(V.Local.sSQL)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else
+	'check to see if a record exists for the customer
+	F.Intrinsic.String.Build("SELECT * FROM GCG_6791_BASE_COST WHERE PART = '{0}' AND REV = '{1}' AND CUSTOMER = ''", V.Local.sPart.Trim, V.Local.sRev.Trim, V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL, V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"")
+		'update the record
+		F.Intrinsic.String.Build("UPDATE GCG_6791_BASE_COST SET BASE_COST = '{0}', FAB_COST = '{1}' WHERE CUSTOMER = '' AND PART = '{2}' AND REV = '{3}'", V.Local.fBaseCost, v.Local.fFabCost, V.Local.sPart.Trim, V.Local.sRev.Trim, V.Local.sSQL)
+		F.ODBC.Connection!con.Execute(V.Local.sSQL)
+
+	F.Intrinsic.Control.ElseIf(V.Local.sRet.Trim,=,"")
+		'insert the record
+		F.Intrinsic.String.Build("INSERT INTO GCG_6791_BASE_COST (CUSTOMER, PART, REV, METAL_CONTENT, BASE_COST, FAB_COST) VALUES ('','{0}', '{1}', '{2}', '{3}', '{4}')", v.Local.sPart.Trim, V.Local.sRev.Trim, V.Local.sMetalContent.Trim, v.Local.fBaseCost, V.Local.fFabCost, V.Local.sSQL)
+		F.ODBC.Connection!con.Execute(V.Local.sSQL)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.UI.Msgbox("Base Cost Saved!", "Save Successful")
+F.Intrinsic.Control.CallSub(f_Main_UnLoad)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6791", "ProjectTitle", "Metal Surcharges ", "Callback", "f_Main_UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdInvSave_Click.End
+
+Program.Sub.f_InvBaseCost_UnLoad.Start
+V.Local.iRet.Declare(Long)
+
+'prompt the user with a message asking if they'd like to save the records. 
+F.Intrinsic.UI.Msgbox("Are you sure you want to cancel?", "Warning", 4, V.Local.iRet)
+F.Intrinsic.Control.If(V.Local.iRet,=,6)
+'if they say yes, call unload sub
+	F.Intrinsic.Control.CallSub(f_Main_Unload)
+F.Intrinsic.Control.ElseIf(V.Local.iRet,=,7)
+'if they say no, exit sub
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6791", "ProjectTitle", "Metal Surcharges ", "Callback", "f_Main_UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.f_InvBaseCost_UnLoad.End
+
+Program.Sub.BuildGrid.Start
+F.Intrinsic.Control.Try
+V.Local.iCnt.Declare(Long)
+
+F.Intrinsic.Control.If(v.DataTable.dtPrice.Exists)
+	F.Data.DataTable.Close("dtPrice")
+F.Intrinsic.Control.EndIf
+
+'create the datatable
+F.Data.DataTable.Create("dtPrice", True)
+'add columns
+F.Data.DataTable.AddColumn("dtPrice", "COMEX_DATE", "Date")
+F.Data.DataTable.AddColumn("dtPrice", "COMEX_PRICE", "Float")
+
+F.Intrinsic.Control.If(V.DataTable.dtTemp.Exists)
+	F.Data.DataTable.Close("dtTemp")
+F.Intrinsic.Control.EndIf
+'load data from custom table
+f.Data.DataTable.CreateFromSQL("dtTemp","con","SELECT COMEX_DATE, COMEX_PRICE FROM GCG_6791_COMEX_PRICE ORDER BY COMEX_DATE",True)
+F.Intrinsic.Control.For(V.Local.iCnt,0, V.DataTable.dtTemp.RowCount--,1)
+	F.Data.DataTable.AddRow("dtPrice", "COMEX_DATE", V.DataTable.dtTemp(V.Local.iCnt).COMEX_DATE!FieldVal, "COMEX_PRICE", V.DataTable.dtTemp(V.Local.iCnt).COMEX_PRICE!FieldValFloat)
+F.Intrinsic.Control.Next(V.Local.iCnt)
+F.Data.DataTable.Close("dtTemp")
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6791", "ProjectTitle", "Metal Surcharges ", "Callback", "f_Main_UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.BuildGrid.End
+
+Program.Sub.FormatGrid.Start
+F.Intrinsic.Control.Try
+V.Local.sDefault.Declare(String)
+V.Local.sGV.Declare(String)
+V.Local.sProperty.Declare(String)
+
+'add gridview
+Gui.f_PriceEntry.GsGcPrice.AddGridviewFromDatatable("gvPrice", "dtPrice")
+V.Local.sGV.Set("gvPrice")
+
+Gui.f_PriceEntry.GsGcPrice.SetGridviewProperty(V.Local.sGV, "MultiSelect", False)
+Gui.f_PriceEntry.GsGcPrice.SetGridviewProperty(V.Local.sGV, "AllowFilter", True)
+Gui.f_PriceEntry.GsGcPrice.SetGridviewProperty(V.Local.sGV, "OptionsViewShowGroupPanel", False)
+Gui.f_PriceEntry.GsGcPrice.SetGridviewProperty(V.Local.sGV, "EnableAppearanceOddRow", False)
+Gui.f_PriceEntry.GsGcPrice.SetGridviewProperty(V.Local.sGV, "OptionsViewColumnAutoWidth", True)
+Gui.f_PriceEntry.GsGcPrice.SetGridviewProperty(V.Local.sGV, "AllowColumnResizing", True)
+Gui.f_PriceEntry.GsGcPrice.SetGridviewProperty(V.Local.sGV, "AllowColumnMoving", True)
+Gui.f_PriceEntry.GsGcPrice.SetGridviewProperty(V.Local.sGV, "Editable", True)
+Gui.f_PriceEntry.GsGcPrice.SetGridviewProperty(V.Local.sGV, "AllowAddRows", True)
+Gui.f_PriceEntry.GsGcPrice.SetGridviewProperty(V.Local.sGV, "AllowDeleteRows", True)
+
+V.Local.sProperty.Set("Caption")
+V.Local.sDefault.Set(" ")
+Gui.f_PriceEntry.GsGcPrice.SetColumnProperty(V.Local.sGV, "COMEX_DATE", V.Local.sProperty, "Date")
+Gui.f_PriceEntry.GsGcPrice.SetColumnProperty(V.Local.sGV, "COMEX_PRICE", V.Local.sProperty, "COMEX Price")
+
+V.Local.sProperty.Set("AllowEdit")
+V.Local.sDefault.Set("True")
+Gui.f_PriceEntry.GsGcPrice.SetColumnProperty(V.Local.sGV, "COMEX_DATE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_PriceEntry.GsGcPrice.SetColumnProperty(V.Local.sGV, "COMEX_PRICE", V.Local.sProperty, V.Local.sDefault)
+
+V.Local.sProperty.Set("ReadOnly")
+V.Local.sDefault.Set("False")
+Gui.f_PriceEntry.GsGcPrice.SetColumnProperty(V.Local.sGV, "COMEX_DATE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_PriceEntry.GsGcPrice.SetColumnProperty(V.Local.sGV, "COMEX_PRICE", V.Local.sProperty, V.Local.sDefault)
+
+V.Local.sProperty.Set("HeaderFontBold")
+V.Local.sDefault.Set("True")
+Gui.f_PriceEntry.GsGcPrice.SetColumnProperty(V.Local.sGV, "COMEX_DATE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_PriceEntry.GsGcPrice.SetColumnProperty(V.Local.sGV, "COMEX_PRICE", V.Local.sProperty, V.Local.sDefault)
+
+V.Local.sProperty.Set("HeaderHAlignment")
+V.Local.sDefault.Set("Center")
+Gui.f_PriceEntry.GsGcPrice.SetColumnProperty(V.Local.sGV, "COMEX_DATE", V.Local.sProperty, V.Local.sDefault)
+Gui.f_PriceEntry.GsGcPrice.SetColumnProperty(V.Local.sGV, "COMEX_PRICE", V.Local.sProperty, V.Local.sDefault)
+
+V.Local.sProperty.Set("MinWidth")
+Gui.f_PriceEntry.GsGcPrice.SetColumnProperty(V.Local.sGV, "COMEX_DATE", V.Local.sProperty,100)
+Gui.f_PriceEntry.GsGcPrice.SetColumnProperty(V.Local.sGV, "COMEX_PRICE", V.Local.sProperty, 100)
+
+V.Local.sProperty.Set("DisplayCustomDatetime")
+Gui.f_PriceEntry.GsGcPrice.SetColumnProperty(V.Local.sGV, "COMEX_DATE", V.Local.sProperty, "d")
+
+V.Local.sProperty.Set("DisplayCustomNumeric")
+Gui.f_PriceEntry.GsGcPrice.SetColumnProperty(V.Local.sGV, "COMEX_PRICE", V.Local.sProperty, "$#,###,###,##0.0000")
+
+Gui.f_PriceEntry.GsGcPrice.MainView("gvPrice")
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6791", "ProjectTitle", "Metal Surcharges ", "Callback", "f_Main_UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.FormatGrid.End
+
+Program.Sub.GsGcPrice_CellValueChanged.Start
+F.Intrinsic.Control.Try
+V.Local.iRow.Declare(Long)
+V.Local.dDate.Declare(Date)
+V.Local.sDate.Declare(String)
+V.Local.fPrice.Declare(Float)
+V.Local.sPrice.Declare(String)
+V.Local.sSQL.Declare(String)
+
+F.Intrinsic.Control.BlockEvents
+F.Intrinsic.Control.If(V.DataTable.dtPrice.RowCount--,>,-1)
+	F.Data.DataTable.AcceptChanges("dtPrice")
+	F.Intrinsic.Control.SelectCase(V.Args.Column)
+		F.Intrinsic.Control.Case("COMEX_PRICE")
+	
+		Gui.f_PriceEntry.GsGcPrice.GetCellValueByColumnName("gvPrice", "COMEX_PRICE", V.Args.RowIndex, V.Local.fPrice)
+		Gui.f_PriceEntry.GsGcPrice.GetCellValueByColumnName("gvPrice", "COMEX_DATE", V.Args.RowIndex, V.Local.dDate)
+		F.Intrinsic.String.Format(V.Local.dDate, "YYYY-MM-DD", V.Local.sDate)
+	
+		F.Intrinsic.String.Build("UPDATE GCG_6791_COMEX_PRICE SET COMEX_PRICE = '{0}' WHERE COMEX_DATE = '{1}'", V.Local.fPrice, V.Local.sDate, v.Local.sSQL)
+		F.ODBC.Connection!con.Execute(V.Local.sSQL)
+	
+	F.Intrinsic.Control.EndSelect
+'F.Intrinsic.Control.Else
+'	F.Data.DataTable.AcceptChanges("dtPrice")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.UnBlockEvents
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6791", "ProjectTitle", "Metal Surcharges ", "Callback", "f_Main_UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.GsGcPrice_CellValueChanged.End
+
+Program.Sub.f_PriceEntry_UnLoad.Start
+F.Intrinsic.Control.Try
+V.Local.iRet.Declare(Long)
+
+'prompt the user with a message asking if they'd like to save the records. 
+F.Intrinsic.UI.Msgbox("Would you like to save the data in the grid?", "Warning", 4, V.Local.iRet)
+F.Intrinsic.Control.If(V.Local.iRet,=,6)
+'if they say yes, call sub to save records and then end
+	F.Intrinsic.Control.CallSub(SavePrices)
+	F.Intrinsic.Control.CallSub(f_Main_Unload)
+F.Intrinsic.Control.ElseIf(V.Local.iRet,=,7)
+'if they say no, call unload sub
+	F.Intrinsic.Control.CallSub(f_Main_Unload)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6791", "ProjectTitle", "Metal Surcharges ", "Callback", "f_Main_UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.f_PriceEntry_UnLoad.End
+
+Program.Sub.SavePrices.Start
+F.Intrinsic.Control.Try
+
+F.ODBC.Connection!con.Execute("DELETE FROM GCG_6791_COMEX_PRICE")
+F.Data.DataTable.SaveToDB("dtPrice", "con", "GCG_6791_COMEX_PRICE", "COMEX_DATE", 128)
+F.Intrinsic.UI.Msgbox("Save Successful!", "Success")
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6791", "ProjectTitle", "Metal Surcharges ", "Callback", "f_Main_UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.SavePrices.End
+
+Program.Sub.f_Main_UnLoad.Start
+F.Intrinsic.Control.Try
+
+
+'close the connection
+F.ODBC.Connection!con.Close
+
+'end the program
+F.Intrinsic.Control.End
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "ErrorNumber", V.Ambient.ErrorNumber, "ErrorDescription", V.Ambient.ErrorDescription, "Subroutine", V.Ambient.CurrentSubroutine, "UNATTENDED", V.Global.bUnattended, "Project", "6791", "ProjectTitle", "Metal Surcharges ", "Callback", "f_Main_UnLoad")
+F.Intrinsic.Control.EndTry
+Program.Sub.f_Main_UnLoad.End
+
+Program.Sub.ErrorMessage.Start
+'basic error message for replacing catch block
+'this is really just for when printing the message and ending program
+'pass error number, error description, current subroutine
+'optional callback sub, this will be called before ending
+'optional unattended parameters, those subs may not exist if not using them but won't be called
+F.Intrinsic.Control.Try
+
+V.Local.iError.Declare(Long)
+V.Local.sErrorDescription.Declare(String)
+V.Local.sSubroutine.Declare(String)
+V.Local.sError.Declare(String)
+V.Local.bExists.Declare(Boolean)
+V.Local.sCallback.Declare(String)
+
+V.Local.iError.Set(V.Args.ErrorNumber)
+V.Local.sErrorDescription.Set(V.Args.ErrorDescription)
+V.Local.sSubroutine.Set(V.Args.Subroutine)
+
+'make sure we aren't in an error loop
+F.Intrinsic.Control.If(V.Global.bError)
+	F.Intrinsic.Control.End
+
+F.Intrinsic.Control.EndIf
+V.Global.bError.Set(True)
+
+F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}", V.Caller.ScriptFile, V.Ambient.Newline, V.Local.sSubroutine, V.Local.iError, V.Local.sErrorDescription, V.Ambient.GABVersion, V.Local.sError)
+
+F.Intrinsic.Variable.ArgExists("UNATTENDED", V.Local.bExists)
+F.Intrinsic.Control.If(V.Local.bExists)
+	F.Intrinsic.Control.If(V.Args.UNATTENDED)
+		F.Intrinsic.Control.CallSub(UnattendedErrorMessage, "MESSAGE", V.Local.sError, "PROJECT", V.Args.PROJECT, "PROJECTTITLE", V.Args.PROJECTTITLE)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Variable.ArgExists("Callback", V.Local.bExists)
+F.Intrinsic.Control.If(V.Local.bExists)
+	V.Local.sCallback.Set(V.Args.Callback.Trim)
+	F.Intrinsic.Control.CallSub(V.Local.sCallback)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.End
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Caller.ScriptFile,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+
+F.Intrinsic.Control.EndTry
+Program.Sub.ErrorMessage.End
+
+Program.Sub.Comments.Start
+${$5$}$20.1.8474.24170$}$1
+${$6$}$acollins$}$20230508231742964$}$h98hERc2yV72q0GaUGlwSaoK/aefTdVk4pnMIo1oXFaTIkCgwbMRcg2kkWpSyl3zjMZVp5+zS5XwLR5Fp2lclw==
+Program.Sub.Comments.End
